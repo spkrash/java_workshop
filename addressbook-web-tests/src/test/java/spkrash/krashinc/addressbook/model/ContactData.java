@@ -1,4 +1,4 @@
-package spkrash.krashinc.addressbook;
+package spkrash.krashinc.addressbook.model;
 
 public class ContactData
 {
