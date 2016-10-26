@@ -32,7 +32,7 @@ public class TestBase
    {
       wd = new FirefoxDriver();
       wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-      wd.get("http://localhost/addressbook/group.php");
+      wd.get("http://localhost/addressbook/");
       login("admin", "secret");
    }
 
@@ -84,5 +84,50 @@ public class TestBase
    public void tearDown()
    {
       wd.quit();
+   }
+
+   protected void fillContactForm(ContactData contactData)
+   {
+      wd.findElement(By.name("firstname")).click();
+      wd.findElement(By.name("firstname")).clear();
+      wd.findElement(By.name("firstname")).sendKeys(contactData.getFirstName());
+      wd.findElement(By.name("middlename")).click();
+      wd.findElement(By.name("middlename")).clear();
+      wd.findElement(By.name("middlename")).sendKeys(contactData.getMiddleName());
+      wd.findElement(By.name("lastname")).click();
+      wd.findElement(By.name("lastname")).clear();
+      wd.findElement(By.name("lastname")).sendKeys(contactData.getLastName());
+      wd.findElement(By.name("nickname")).click();
+      wd.findElement(By.name("nickname")).clear();
+      wd.findElement(By.name("nickname")).sendKeys(contactData.getNickname());
+      wd.findElement(By.name("address")).click();
+      wd.findElement(By.name("address")).clear();
+      wd.findElement(By.name("address")).sendKeys(contactData.getAddress());
+      wd.findElement(By.name("mobile")).click();
+      wd.findElement(By.name("mobile")).clear();
+      wd.findElement(By.name("mobile")).sendKeys(contactData.getMobileNum());
+      wd.findElement(By.name("email")).click();
+      wd.findElement(By.name("email")).clear();
+      wd.findElement(By.name("email")).sendKeys(contactData.getPersEmail());
+   }
+
+   protected void returnToHomePage()
+   {
+      wd.findElement(By.linkText("home page")).click();
+   }
+
+   protected void confirmContactCreation()
+   {
+      wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
+   }
+
+   protected void initContactCreation()
+   {
+      wd.findElement(By.linkText("add new")).click();
+   }
+
+   protected void gotoHomePage()
+   {
+      wd.findElement(By.linkText("home")).click();
    }
 }
