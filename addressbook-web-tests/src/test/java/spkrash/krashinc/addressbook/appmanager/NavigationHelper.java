@@ -17,10 +17,26 @@ public class NavigationHelper extends HelperBase
    public void gotoGroupPage()
    {
       clickItem(By.linkText("groups"));
+      try
+      {
+         Thread.sleep(1000);
+      } catch (InterruptedException e)
+      {
+         e.printStackTrace();
+      }
+
    }
 
    public void gotoHomePage()
    {
       clickItem(By.linkText("home"));
+      try
+      {
+         Thread.sleep(1000);
+      } catch (InterruptedException e)
+      {
+         e.printStackTrace();
+      }
+
    }
 }
