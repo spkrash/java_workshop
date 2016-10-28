@@ -1,7 +1,6 @@
 package spkrash.krashinc.addressbook.appmanager;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
-
 import java.util.concurrent.TimeUnit;
 
 /**
