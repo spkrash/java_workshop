@@ -1,6 +1,7 @@
 package spkrash.krashinc.addressbook.appmanager;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
+
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -12,8 +13,8 @@ public class ApplicationManager
 
    private ContactHelper contactHelper;
    private SessionHelper sessionHelper;
-   private  NavigationHelper navigationHelper;
-   private  GroupHelper groupHelper;
+   private NavigationHelper navigationHelper;
+   private GroupHelper groupHelper;
 
    public void init()
    {
