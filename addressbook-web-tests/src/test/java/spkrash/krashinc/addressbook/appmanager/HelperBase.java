@@ -2,6 +2,7 @@ package spkrash.krashinc.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
@@ -23,9 +24,9 @@ public class HelperBase
 
    protected void fillTextField(By locator, String text)
    {
-      clickItem(locator);
-      wd.findElement(locator).clear();
-      wd.findElement(locator).sendKeys(text);
+      WebElement element = wd.findElement(locator);
+      element.clear();
+      element.sendKeys(text);
    }
 
    public boolean isAlertPresent()
