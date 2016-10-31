@@ -1,9 +1,8 @@
 package spkrash.krashinc.ashjar;
 
-public class HelloWorld
-{
-	public static void main(String[] args)
-	{
+public class HelloWorld {
+   public static void main(String[] args)
+   {
       hello("Алексей");
 
       // через функцию
@@ -20,13 +19,13 @@ public class HelloWorld
       System.out.println("Расстояние между точками равно " + dist.distance() + ".");
    }
 
-   public static void hello (String target)
+   public static void hello(String target)
    {
       System.out.println("Привет, " + target + "!" + "\n");
    }
 
    public static double distance(Point p1, Point p2)
    {
-      return Math.sqrt((p1.x-p2.x) * (p1.x-p2.x) + (p1.y-p2.y) * (p1.y-p2.y));
+      return Math.sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y));
    }
 }
