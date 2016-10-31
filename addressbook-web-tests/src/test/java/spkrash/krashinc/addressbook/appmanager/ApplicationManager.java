@@ -6,6 +6,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.BrowserType;
 
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -26,15 +27,14 @@ public class ApplicationManager {
 
    public void init()
    {
-      if (browser == BrowserType.FIREFOX) {
+      if (Objects.equals(browser, BrowserType.FIREFOX)) {
          wd = new FirefoxDriver();
-      } else if (browser == BrowserType.CHROME){
+      } else if (Objects.equals(browser, BrowserType.CHROME)){
          wd = new ChromeDriver();
-      } else if (browser == BrowserType.EDGE) {
+      } else if (Objects.equals(browser, BrowserType.EDGE)) {
          wd = new EdgeDriver();
       }
 
-      wd = new FirefoxDriver();
       wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
       wd.get("http://localhost/addressbook/");
       contactHelper = new ContactHelper(wd);
