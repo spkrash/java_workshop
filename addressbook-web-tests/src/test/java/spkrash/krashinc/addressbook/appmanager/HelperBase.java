@@ -8,8 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 /**
  * Created by Krash on 28.10.2016.
  */
-public class HelperBase
-{
+public class HelperBase {
    protected FirefoxDriver wd;
 
    public HelperBase(FirefoxDriver wd)
@@ -31,12 +30,10 @@ public class HelperBase
 
    public boolean isAlertPresent()
    {
-      try
-      {
+      try {
          wd.switchTo().alert();
          return true;
-      } catch (NoAlertPresentException e)
-      {
+      } catch (NoAlertPresentException e) {
          return false;
       }
    }

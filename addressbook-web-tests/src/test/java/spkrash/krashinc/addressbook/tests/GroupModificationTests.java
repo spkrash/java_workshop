@@ -6,8 +6,7 @@ import spkrash.krashinc.addressbook.model.GroupData;
 /**
  * Created by Krash on 28.10.2016.
  */
-public class GroupModificationTests extends TestBase
-{
+public class GroupModificationTests extends TestBase {
    @Test
    public void testGroupModification()
    {

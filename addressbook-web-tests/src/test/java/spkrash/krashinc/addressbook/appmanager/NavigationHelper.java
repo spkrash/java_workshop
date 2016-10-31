@@ -6,8 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 /**
  * Created by Krash on 26.10.2016.
  */
-public class NavigationHelper extends HelperBase
-{
+public class NavigationHelper extends HelperBase {
 
    public NavigationHelper(FirefoxDriver wd)
    {
@@ -17,11 +16,9 @@ public class NavigationHelper extends HelperBase
    public void gotoGroupPage()
    {
       clickItem(By.linkText("groups"));
-      try
-      {
+      try {
          Thread.sleep(1000);
-      } catch (InterruptedException e)
-      {
+      } catch (InterruptedException e) {
          e.printStackTrace();
       }
 
@@ -30,11 +27,9 @@ public class NavigationHelper extends HelperBase
    public void gotoHomePage()
    {
       clickItem(By.linkText("home"));
-      try
-      {
+      try {
          Thread.sleep(1000);
-      } catch (InterruptedException e)
-      {
+      } catch (InterruptedException e) {
          e.printStackTrace();
       }
 

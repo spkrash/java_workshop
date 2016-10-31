@@ -7,8 +7,7 @@ import spkrash.krashinc.addressbook.appmanager.ApplicationManager;
 /**
  * Created by Krash on 26.10.2016.
  */
-public class TestBase
-{
+public class TestBase {
 
    protected final ApplicationManager app = new ApplicationManager();
 

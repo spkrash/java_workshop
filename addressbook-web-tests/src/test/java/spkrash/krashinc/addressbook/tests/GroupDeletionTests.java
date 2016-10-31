@@ -5,8 +5,7 @@ import org.testng.annotations.Test;
 /**
  * Created by Krash on 28.10.2016.
  */
-public class GroupDeletionTests extends TestBase
-{
+public class GroupDeletionTests extends TestBase {
    @Test
    public void testGroupDeletion()
    {

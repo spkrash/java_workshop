@@ -1,7 +1,6 @@
 package spkrash.krashinc.addressbook.model;
 
-public class ContactData
-{
+public class ContactData {
    private final String firstName;
    private final String middleName;
    private final String lastName;

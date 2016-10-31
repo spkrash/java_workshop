@@ -7,8 +7,7 @@ import spkrash.krashinc.addressbook.model.ContactData;
 /**
  * Created by Krash on 27.10.2016.
  */
-public class ContactHelper extends HelperBase
-{
+public class ContactHelper extends HelperBase {
 
    public ContactHelper(FirefoxDriver wd)
    {

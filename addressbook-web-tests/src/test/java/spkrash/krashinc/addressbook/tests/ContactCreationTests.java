@@ -3,8 +3,7 @@ package spkrash.krashinc.addressbook.tests;
 import org.testng.annotations.Test;
 import spkrash.krashinc.addressbook.model.ContactData;
 
-public class ContactCreationTests extends TestBase
-{
+public class ContactCreationTests extends TestBase {
    @Test
    public void testContactCreation()
    {

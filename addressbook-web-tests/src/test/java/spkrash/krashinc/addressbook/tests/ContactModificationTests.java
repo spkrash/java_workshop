@@ -6,8 +6,7 @@ import spkrash.krashinc.addressbook.model.ContactData;
 /**
  * Created by Krash on 28.10.2016.
  */
-public class ContactModificationTests extends TestBase
-{
+public class ContactModificationTests extends TestBase {
    @Test
    public void testContactModification()
    {

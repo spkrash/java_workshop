@@ -7,8 +7,7 @@ import spkrash.krashinc.addressbook.model.GroupData;
 /**
  * Created by Krash on 26.10.2016.
  */
-public class GroupHelper extends HelperBase
-{
+public class GroupHelper extends HelperBase {
 
    public GroupHelper(FirefoxDriver wd)
    {

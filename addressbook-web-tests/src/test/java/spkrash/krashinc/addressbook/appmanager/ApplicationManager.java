@@ -7,8 +7,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by Krash on 26.10.2016.
  */
-public class ApplicationManager
-{
+public class ApplicationManager {
    FirefoxDriver wd;
 
    private ContactHelper contactHelper;
