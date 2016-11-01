@@ -25,8 +25,13 @@ public class HelperBase {
    protected void fillTextField(By locator, String text)
    {
       WebElement element = wd.findElement(locator);
-      element.clear();
-      element.sendKeys(text);
+      if (text != null) {
+         String existingText = element.getAttribute("value");
+         if (! text.equals(existingText)) {
+            element.clear();
+            element.sendKeys(text);
+         }
+      }
    }
 
    public boolean isAlertPresent()
