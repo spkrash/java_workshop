@@ -13,10 +13,7 @@ public class ContactDeletionTests extends TestBase {
    {
       app.getNavigationHelper().gotoHomePage();
       if(!app.getGroupHelper().isElementPresent(By.name("selected[]"))) {
-         app.getContactHelper().initContactCreation();
-         app.getContactHelper().fillContactForm(new ContactData("Bruce", "<B>", "Wayne", "Batman", "Gotham City", "+380500000000", "batman@gotham.com"));
-         app.getContactHelper().confirmContactCreation();
-         app.getContactHelper().returnToHomePage();
+         app.getContactHelper().contactCreationGrouped("Bruce", "<B>", "Wayne", "Batman", "Gotham City", "+380500000000", "batman@gotham.com");
       }
       app.getContactHelper().selectContact();
       app.getContactHelper().deleteContact();

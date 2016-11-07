@@ -65,4 +65,11 @@ public class ContactHelper extends HelperBase {
    {
       clickItem(By.xpath("//div[@id='content']/form[2]/div[2]/input"));
    }
+
+   public void contactCreationGrouped(String firstName, String middleName, String lastName, String nickname, String address, String mobileNum, String persEmail) {
+      initContactCreation();
+      fillContactForm(new ContactData(firstName, middleName, lastName, nickname, address, mobileNum, persEmail));
+      confirmContactCreation();
+      returnToHomePage();
+   }
 }

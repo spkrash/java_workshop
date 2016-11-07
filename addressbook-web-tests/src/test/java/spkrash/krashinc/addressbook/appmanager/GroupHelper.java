@@ -56,4 +56,11 @@ public class GroupHelper extends HelperBase {
    {
       clickItem(By.name("update"));
    }
+
+   public void groupCreationGrouped(String name, String header, String footer) {
+      initGroupCreation();
+      fillGroupForm(new GroupData(name, header, footer));
+      submitGroupCreation();
+      returnToGroupPage();
+   }
 }

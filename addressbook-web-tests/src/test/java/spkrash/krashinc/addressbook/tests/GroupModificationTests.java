@@ -13,10 +13,7 @@ public class GroupModificationTests extends TestBase {
    {
       app.getNavigationHelper().gotoGroupPage();
       if (!app.getGroupHelper().isElementPresent(By.name("selected[]"))) {
-         app.getGroupHelper().initGroupCreation();
-         app.getGroupHelper().fillGroupForm(new GroupData("testGroup1", "headerGr1", "footerGr1"));
-         app.getGroupHelper().submitGroupCreation();
-         app.getGroupHelper().returnToGroupPage();
+         app.getGroupHelper().groupCreationGrouped("testGroup1", "headerGr1", "footerGr1");
       }
       app.getGroupHelper().selectGroup();
       app.getGroupHelper().initGroupModification();

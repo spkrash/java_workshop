@@ -1,7 +1,6 @@
 package spkrash.krashinc.addressbook.tests;
 
 import org.testng.annotations.Test;
-import spkrash.krashinc.addressbook.model.GroupData;
 
 public class GroupCreationTests extends TestBase {
 
@@ -9,10 +8,6 @@ public class GroupCreationTests extends TestBase {
    public void testGroupCreation()
    {
       app.getNavigationHelper().gotoGroupPage();
-      app.getGroupHelper().initGroupCreation();
-      app.getGroupHelper().fillGroupForm(new GroupData("testGroup1", "headerGr1", "footerGr1"));
-      app.getGroupHelper().submitGroupCreation();
-      app.getGroupHelper().returnToGroupPage();
+      app.getGroupHelper().groupCreationGrouped("testGroup1", "headerGr1", "footerGr1");
    }
-
 }
