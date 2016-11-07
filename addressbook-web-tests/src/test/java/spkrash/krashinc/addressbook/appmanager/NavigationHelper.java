@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.util.Objects;
+
 /**
  * Created by Krash on 26.10.2016.
  */
@@ -16,23 +18,27 @@ public class NavigationHelper extends HelperBase {
 
    public void gotoGroupPage()
    {
-      clickItem(By.linkText("groups"));
-      try {
-         Thread.sleep(1000);
-      } catch (InterruptedException e) {
-         e.printStackTrace();
+      if (!Objects.equals(wd.getCurrentUrl(), "http://localhost/addressbook/group.php")) {
+         clickItem(By.linkText("groups"));
+         try {
+            Thread.sleep(1000);
+         } catch (InterruptedException e) {
+            e.printStackTrace();
+
+         }
       }
 
    }
 
    public void gotoHomePage()
    {
-      clickItem(By.linkText("home"));
-      try {
-         Thread.sleep(1000);
-      } catch (InterruptedException e) {
-         e.printStackTrace();
+      if (!Objects.equals(wd.getCurrentUrl(), "http://localhost/addressbook/")) {
+         clickItem(By.linkText("home"));
+         try {
+            Thread.sleep(1000);
+         } catch (InterruptedException e) {
+            e.printStackTrace();
+         }
       }
-
    }
 }
