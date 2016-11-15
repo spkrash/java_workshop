@@ -38,7 +38,6 @@ public class NavigationHelper extends HelperBase {
          return;
       }
          clickItem(By.linkText("groups"));
-
    }
 
    /*   public void gotoHomePage()
