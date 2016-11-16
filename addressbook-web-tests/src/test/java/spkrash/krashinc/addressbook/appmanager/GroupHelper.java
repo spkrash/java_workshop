@@ -36,9 +36,9 @@ public class GroupHelper extends HelperBase {
       clickItem(By.name("new"));
    }
 
-   public void selectGroup()
+   public void selectGroup(int index)
    {
-      clickItem(By.name("selected[]"));
+      wd.findElements(By.name("selected[]")).get(index).click();
    }
 
    public void deleteGroup()

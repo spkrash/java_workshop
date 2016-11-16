@@ -40,9 +40,9 @@ public class ContactHelper extends HelperBase {
       clickItem(By.linkText("add new"));
    }
 
-   public void initContactModification()
+   public void initContactModification(int index)
    {
-      clickItem(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
+      clickItem(By.xpath("//table[@id='maintable']/tbody/tr[" + (index + 2) + "]/td[8]/a/img"));
    }
 
    public void confirmContactModification()
@@ -50,9 +50,9 @@ public class ContactHelper extends HelperBase {
       clickItem(By.name("update"));
    }
 
-   public void selectContact()
+   public void selectContact(int index)
    {
-      clickItem(By.name("selected[]"));
+      wd.findElements(By.name("selected[]")).get(index).click();
    }
 
    public void submitAlert()

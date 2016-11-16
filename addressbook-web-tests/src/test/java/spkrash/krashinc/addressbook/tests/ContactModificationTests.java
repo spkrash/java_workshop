@@ -16,12 +16,12 @@ public class ContactModificationTests extends TestBase {
       if (!app.getGroupHelper().isElementPresent(By.name("selected[]"))) {
          app.getContactHelper().contactCreationGrouped("Bruce", "<B>", "Wayne", "Batman", "Gotham City", "+380500000000", "batman@gotham.com");
       }
-      int before = app.getContactHelper().getContactCount();
-      app.getContactHelper().initContactModification();
+      int before = app.getContactHelper().getContactCount()-1;
+      app.getContactHelper().initContactModification(1);
       app.getContactHelper().fillContactForm(new ContactData("Bruce.2", "<B.2>", "Wayne.2", "Batman.2", "Gotham City.2", "+380511111111", "batman.2@gotham.com"));
       app.getContactHelper().confirmContactModification();
       app.getContactHelper().returnToHomePage();
-      int after = app.getContactHelper().getContactCount();
+      int after = app.getContactHelper().getContactCount()-1;
       Assert.assertEquals(after, before);
    }
 }
