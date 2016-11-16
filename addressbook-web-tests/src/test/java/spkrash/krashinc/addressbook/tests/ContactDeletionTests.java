@@ -3,6 +3,9 @@ package spkrash.krashinc.addressbook.tests;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import spkrash.krashinc.addressbook.model.ContactData;
+
+import java.util.List;
 
 /**
  * Created by Krash on 28.10.2016.
@@ -15,12 +18,15 @@ public class ContactDeletionTests extends TestBase {
       if (!app.getGroupHelper().isElementPresent(By.name("selected[]"))) {
          app.getContactHelper().contactCreationGrouped("Bruce", "<B>", "Wayne", "Batman", "Gotham City", "+380500000000", "batman@gotham.com");
       }
-      int before = app.getContactHelper().getContactCount();
-      app.getContactHelper().selectContact(before-1);
+      List<ContactData> before = app.getContactHelper().getContactList();
+//      int before = app.getContactHelper().getContactCount();
+      app.getContactHelper().selectContact(before.size()-1);
       app.getContactHelper().deleteContact();
       app.getContactHelper().submitAlert();
       app.getNavigationHelper().gotoHomePage();
-      int after = app.getContactHelper().getContactCount();
-      Assert.assertEquals(after, before - 1);
+      List<ContactData> after = app.getContactHelper().getContactList();
+      Assert.assertEquals(after.size(), before.size() - 1);
+//      int after = app.getContactHelper().getContactCount();
+//      Assert.assertEquals(after, before - 1);
    }
 }
