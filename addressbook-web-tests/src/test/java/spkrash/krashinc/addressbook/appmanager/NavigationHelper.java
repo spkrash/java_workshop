@@ -2,9 +2,6 @@ package spkrash.krashinc.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-
-import java.util.Objects;
 
 /**
  * Created by Krash on 26.10.2016.
@@ -37,7 +34,7 @@ public class NavigationHelper extends HelperBase {
       {
          return;
       }
-         clickItem(By.linkText("groups"));
+      clickItem(By.linkText("groups"));
    }
 
    /*   public void gotoHomePage()
@@ -53,9 +50,9 @@ public class NavigationHelper extends HelperBase {
       }
       */
    public void gotoHomePage() {
-   if(isElementPresent(By.id("maintable"))){
-      return;
-   }
+      if (isElementPresent(By.id("maintable"))) {
+         return;
+      }
       clickItem(By.linkText("home"));
    }
 

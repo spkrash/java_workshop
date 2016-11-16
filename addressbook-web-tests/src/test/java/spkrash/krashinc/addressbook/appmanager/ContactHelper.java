@@ -2,7 +2,6 @@ package spkrash.krashinc.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import spkrash.krashinc.addressbook.model.ContactData;
 
 /**
@@ -71,5 +70,9 @@ public class ContactHelper extends HelperBase {
       fillContactForm(new ContactData(firstName, middleName, lastName, nickname, address, mobileNum, persEmail));
       confirmContactCreation();
       returnToHomePage();
+   }
+
+   public int getContactCount() {
+      return wd.findElements(By.name("selected[]")).size();
    }
 }

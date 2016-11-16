@@ -1,7 +1,6 @@
 package spkrash.krashinc.addressbook.appmanager;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
  * Created by Krash on 28.10.2016.
@@ -24,7 +23,7 @@ public class HelperBase {
       WebElement element = wd.findElement(locator);
       if (text != null) {
          String existingText = element.getAttribute("value");
-         if (! text.equals(existingText)) {
+         if (!text.equals(existingText)) {
             element.clear();
             element.sendKeys(text);
          }
@@ -45,7 +44,7 @@ public class HelperBase {
       try {
          wd.findElement(locator);
          return true;
-      } catch (NoSuchElementException ex){
+      } catch (NoSuchElementException ex) {
          return false;
       }
    }

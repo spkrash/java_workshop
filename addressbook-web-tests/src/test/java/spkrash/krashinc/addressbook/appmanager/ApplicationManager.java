@@ -29,13 +29,13 @@ public class ApplicationManager {
    {
       if (Objects.equals(browser, BrowserType.FIREFOX)) {
          wd = new FirefoxDriver();
-      } else if (Objects.equals(browser, BrowserType.CHROME)){
+      } else if (Objects.equals(browser, BrowserType.CHROME)) {
          wd = new ChromeDriver();
       } else if (Objects.equals(browser, BrowserType.EDGE)) {
          wd = new EdgeDriver();
       }
 
-      wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+      wd.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
       wd.get("http://localhost/addressbook/");
       contactHelper = new ContactHelper(wd);
       sessionHelper = new SessionHelper(wd);
