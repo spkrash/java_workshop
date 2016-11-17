@@ -21,7 +21,7 @@ public class ContactModificationTests extends TestBase {
       }
       List<ContactData> before = app.getContactHelper().getContactList();
       app.getContactHelper().initContactModification(1); // индекс элементов идёт с нулевого элемента по (before.size() - 1)
-      ContactData contact = new ContactData("Bruce.2", "<B.2>", "Wayne.2", "Batman.2", "Gotham City.2", "+380511111111", "batman.2@gotham.com");
+      ContactData contact = new ContactData("Bruce.2", "<B.2>", "Wayne.2", "Batman.2", "Gotham City.2", "+380511111111", "batman.2@gotham.com", before.get(1).getId());
       app.getContactHelper().fillContactForm(contact);
       app.getContactHelper().confirmContactModification();
       app.getContactHelper().returnToHomePage();
