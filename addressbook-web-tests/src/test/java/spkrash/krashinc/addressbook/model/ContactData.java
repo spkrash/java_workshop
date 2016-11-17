@@ -8,9 +8,9 @@ public class ContactData {
    private final String address;
    private final String mobileNum;
    private final String persEmail;
-   private final String id;
+   private int id;
 
-   public ContactData(String firstName, String middleName, String lastName, String nickname, String address, String mobileNum, String persEmail, String id)
+   public ContactData(String firstName, String middleName, String lastName, String nickname, String address, String mobileNum, String persEmail, int id)
    {
       this.firstName = firstName;
       this.middleName = middleName;
@@ -30,10 +30,14 @@ public class ContactData {
       this.address = address;
       this.mobileNum = mobileNum;
       this.persEmail = persEmail;
-      this.id = null;
+      this.id = 0;
    }
-   public String getId() {
+   public int getId() {
       return id;
+   }
+
+   public void setId(int id) {
+      this.id = id;
    }
 
    public String getFirstName()
@@ -88,10 +92,10 @@ public class ContactData {
 
       ContactData that = (ContactData) o;
 
+      if (id != that.id) return false;
       if (firstName != null ? !firstName.equals(that.firstName) : that.firstName != null) return false;
       if (lastName != null ? !lastName.equals(that.lastName) : that.lastName != null) return false;
-      if (address != null ? !address.equals(that.address) : that.address != null) return false;
-      return id != null ? id.equals(that.id) : that.id == null;
+      return address != null ? address.equals(that.address) : that.address == null;
 
    }
 
@@ -100,7 +104,7 @@ public class ContactData {
       int result = firstName != null ? firstName.hashCode() : 0;
       result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
       result = 31 * result + (address != null ? address.hashCode() : 0);
-      result = 31 * result + (id != null ? id.hashCode() : 0);
+      result = 31 * result + id;
       return result;
    }
 }

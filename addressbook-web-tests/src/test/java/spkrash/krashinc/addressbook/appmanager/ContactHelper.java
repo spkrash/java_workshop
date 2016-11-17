@@ -90,7 +90,7 @@ public class ContactHelper extends HelperBase {
          String firstName = wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[" + (i + 2) + "]/td[3]")).getText();
          String lastName = wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[" + (i + 2) + "]/td[2]")).getText();
          String address = wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[" + (i + 2) + "]/td[4]")).getText();
-         String id = wd.findElement(By.name("selected[]")).getAttribute("value");
+         int id = Integer.parseInt(wd.findElement(By.name("selected[]")).getAttribute("value"));
          ContactData contact = new ContactData(firstName, null, lastName, null, address, null, null, id);
          contacts.add(contact);
       }
