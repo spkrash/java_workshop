@@ -19,7 +19,7 @@ public class ContactDeletionTests extends TestBase {
          app.getContactHelper().contactCreationGrouped("Bruce", "<B>", "Wayne", "Batman", "Gotham City", "+380500000000", "batman@gotham.com");
       }
       List<ContactData> before = app.getContactHelper().getContactList();
-      app.getContactHelper().selectContact(before.size()-1);
+      app.getContactHelper().selectContact(before.size() - 1);
       app.getContactHelper().deleteContact();
       app.getContactHelper().submitAlert();
       app.getNavigationHelper().gotoHomePage();

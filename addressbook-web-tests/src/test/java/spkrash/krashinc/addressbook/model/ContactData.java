@@ -21,6 +21,7 @@ public class ContactData {
       this.persEmail = persEmail;
       this.id = id;
    }
+
    public ContactData(String firstName, String middleName, String lastName, String nickname, String address, String mobileNum, String persEmail)
    {
       this.firstName = firstName;
@@ -30,8 +31,9 @@ public class ContactData {
       this.address = address;
       this.mobileNum = mobileNum;
       this.persEmail = persEmail;
-      this.id = 0;
+      this.id = Integer.MAX_VALUE;
    }
+
    public int getId() {
       return id;
    }
@@ -92,7 +94,6 @@ public class ContactData {
 
       ContactData that = (ContactData) o;
 
-      if (id != that.id) return false;
       if (firstName != null ? !firstName.equals(that.firstName) : that.firstName != null) return false;
       if (lastName != null ? !lastName.equals(that.lastName) : that.lastName != null) return false;
       return address != null ? address.equals(that.address) : that.address == null;
@@ -104,7 +105,6 @@ public class ContactData {
       int result = firstName != null ? firstName.hashCode() : 0;
       result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
       result = 31 * result + (address != null ? address.hashCode() : 0);
-      result = 31 * result + id;
       return result;
    }
 }

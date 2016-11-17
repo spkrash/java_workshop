@@ -1,12 +1,9 @@
 package spkrash.krashinc.addressbook.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.w3c.dom.css.Rect;
 import spkrash.krashinc.addressbook.model.ContactData;
-import spkrash.krashinc.addressbook.model.GroupData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -86,11 +83,11 @@ public class ContactHelper extends HelperBase {
    public List<ContactData> getContactList() {
       List<ContactData> contacts = new ArrayList<>();
       List<WebElement> elements = wd.findElements(By.name("selected[]"));
-      for (int i = 0; i < elements.size(); i++){
-         String firstName = wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[" + (i + 2) + "]/td[3]")).getText();
-         String lastName = wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[" + (i + 2) + "]/td[2]")).getText();
-         String address = wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[" + (i + 2) + "]/td[4]")).getText();
-         int id = Integer.parseInt(wd.findElement(By.name("selected[]")).getAttribute("value"));
+      for (int i = 2; i < elements.size() + 2; i++) {
+         String firstName = wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[" + i + "]/td[3]")).getText();
+         String lastName = wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[" + i + "]/td[2]")).getText();
+         String address = wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[" + i + "]/td[4]")).getText();
+         int id = Integer.parseInt(wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[" + i + "]/td[1]/input")).getAttribute("value"));
          ContactData contact = new ContactData(firstName, null, lastName, null, address, null, null, id);
          contacts.add(contact);
       }
