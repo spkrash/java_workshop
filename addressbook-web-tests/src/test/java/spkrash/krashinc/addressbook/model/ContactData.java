@@ -1,13 +1,13 @@
 package spkrash.krashinc.addressbook.model;
 
 public class ContactData {
-   private  String firstName;
-   private  String middleName;
-   private  String lastName;
-   private  String nickname;
-   private  String address;
-   private  String mobileNum;
-   private  String persEmail;
+   private String firstName;
+   private String middleName;
+   private String lastName;
+   private String nickname;
+   private String address;
+   private String mobileNum;
+   private String persEmail;
    private int id = Integer.MAX_VALUE;
 
    public ContactData withFirstName(String firstName) {

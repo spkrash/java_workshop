@@ -13,20 +13,6 @@ public class NavigationHelper extends HelperBase {
       super(wd);
    }
 
-   /*   public void groupPage()
-      {
-         if (!Objects.equals(wd.getCurrentUrl(), "http://localhost/addressbook/group.php")) {
-            clickItem(By.linkText("groups"));
-            try {
-               Thread.sleep(1000);
-            } catch (InterruptedException e) {
-               e.printStackTrace();
-
-            }
-         }
-
-      }
-   */
    public void groupPage() {
       if (isElementPresent(By.tagName("h1"))
             && wd.findElement(By.tagName("h1")).getText().equals("Groups")
@@ -37,18 +23,6 @@ public class NavigationHelper extends HelperBase {
       clickItem(By.linkText("groups"));
    }
 
-   /*   public void homePage()
-      {
-         if (!Objects.equals(wd.getCurrentUrl(), "http://localhost/addressbook/")) {
-            clickItem(By.linkText("home"));
-            try {
-               Thread.sleep(1000);
-            } catch (InterruptedException e) {
-               e.printStackTrace();
-            }
-         }
-      }
-      */
    public void homePage() {
       if (isElementPresent(By.id("maintable"))) {
          return;
