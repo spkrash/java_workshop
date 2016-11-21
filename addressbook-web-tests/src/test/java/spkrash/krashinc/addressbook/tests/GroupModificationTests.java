@@ -1,6 +1,5 @@
 package spkrash.krashinc.addressbook.tests;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -15,21 +14,21 @@ import java.util.List;
 public class GroupModificationTests extends TestBase {
 
    @BeforeMethod
-   public void ensurePreconditions(){
-      app.getNavigationHelper().gotoGroupPage();
-      if (!app.getGroupHelper().isElementPresent(By.name("selected[]"))) {
-         app.getGroupHelper().groupCreationGrouped("testGroup1", "headerGr1", "footerGr1");
+   public void ensurePreconditions() {
+      app.goTo().groupPage();
+      if (app.group().list().size() == 0) {
+         app.group().create("testGroup1", "headerGr1", "footerGr1");
       }
    }
 
    @Test
    public void testGroupModification()
    {
-      List<GroupData> before = app.getGroupHelper().getGroupList();
+      List<GroupData> before = app.group().list();
       int index = before.size() - 1;
       GroupData group = new GroupData("testGroup1modified", "headerGr1modified", "footerGr1modified", before.get(index).getId());
-      app.getGroupHelper().modifyGroup(index, group);
-      List<GroupData> after = app.getGroupHelper().getGroupList();
+      app.group().modify(index, group);
+      List<GroupData> after = app.group().list();
 
       before.remove(index);
       before.add(group);

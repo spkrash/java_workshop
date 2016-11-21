@@ -1,6 +1,5 @@
 package spkrash.krashinc.addressbook.tests;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -15,24 +14,23 @@ public class ContactDeletionTests extends TestBase {
 
    @BeforeMethod
    public void ensurePreconditions() {
-      app.getNavigationHelper().gotoHomePage();
-      if (!app.getGroupHelper().isElementPresent(By.name("selected[]"))) {
-         app.getContactHelper().contactCreationGrouped("Bruce", "<B>", "Wayne", "Batman", "Gotham City", "+380500000000", "batman@gotham.com");
+      app.goTo().homePage();
+      if (app.contact().list().size() == 0) {
+         app.contact().create("Bruce", "<B>", "Wayne", "Batman", "Gotham City", "+380500000000", "batman@gotham.com");
       }
    }
 
    @Test
    public void testContactDeletion()
    {
-      List<ContactData> before = app.getContactHelper().getContactList();
-      app.getContactHelper().selectContact(before.size() - 1);
-      app.getContactHelper().deleteContact();
-      app.getContactHelper().submitAlert();
-      app.getNavigationHelper().gotoHomePage();
-      List<ContactData> after = app.getContactHelper().getContactList();
+      List<ContactData> before = app.contact().list();
+      int index = before.size() - 1;
+      app.contact().delete(index);
+      app.goTo().homePage();  
+      List<ContactData> after = app.contact().list();
       Assert.assertEquals(after.size(), before.size() - 1);
 
-      before.remove(before.size() - 1);
+      before.remove(index);
       Assert.assertEquals(before, after);
    }
 }
