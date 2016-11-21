@@ -69,9 +69,9 @@ public class ContactHelper extends HelperBase {
       clickItem(By.xpath("//div[@id='content']/form[2]/div[2]/input"));
    }
 
-   public void create(String firstName, String middleName, String lastName, String nickname, String address, String mobileNum, String persEmail) {
+   public void create(ContactData contact) {
       initContactCreation();
-      fillContactForm(new ContactData(firstName, middleName, lastName, nickname, address, mobileNum, persEmail));
+      fillContactForm(contact);
       confirmContactCreation();
       returnToHomePage();
    }
@@ -95,8 +95,7 @@ public class ContactHelper extends HelperBase {
          String lastName = wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[" + i + "]/td[2]")).getText();
          String address = wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[" + i + "]/td[4]")).getText();
          int id = Integer.parseInt(wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[" + i + "]/td[1]/input")).getAttribute("value"));
-         ContactData contact = new ContactData(firstName, null, lastName, null, address, null, null, id);
-         contacts.add(contact);
+         contacts.add(new ContactData().withFirstName(firstName).withLastName(lastName).withAddress(address).withId(id));
       }
       return contacts;
 

@@ -60,9 +60,9 @@ public class GroupHelper extends HelperBase {
       clickItem(By.name("update"));
    }
 
-   public void create(String name, String header, String footer) {
+   public void create(GroupData group) {
       initGroupCreation();
-      fillGroupForm(new GroupData(name, header, footer));
+      fillGroupForm(group);
       submitGroupCreation();
       returnToGroupPage();
    }
@@ -85,8 +85,7 @@ public class GroupHelper extends HelperBase {
       for (WebElement element : elements) {
          String name = element.getText();
          int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-         GroupData group = new GroupData(name, null, null, id);
-         groups.add(group);
+         groups.add(new GroupData().withName(name).withId(id));
       }
       return groups;
    }

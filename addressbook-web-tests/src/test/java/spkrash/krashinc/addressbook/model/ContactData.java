@@ -1,45 +1,57 @@
 package spkrash.krashinc.addressbook.model;
 
 public class ContactData {
-   private final String firstName;
-   private final String middleName;
-   private final String lastName;
-   private final String nickname;
-   private final String address;
-   private final String mobileNum;
-   private final String persEmail;
-   private int id;
+   private  String firstName;
+   private  String middleName;
+   private  String lastName;
+   private  String nickname;
+   private  String address;
+   private  String mobileNum;
+   private  String persEmail;
+   private int id = Integer.MAX_VALUE;
 
-   public ContactData(String firstName, String middleName, String lastName, String nickname, String address, String mobileNum, String persEmail, int id)
-   {
+   public ContactData withFirstName(String firstName) {
       this.firstName = firstName;
-      this.middleName = middleName;
-      this.lastName = lastName;
-      this.nickname = nickname;
-      this.address = address;
-      this.mobileNum = mobileNum;
-      this.persEmail = persEmail;
-      this.id = id;
+      return this;
    }
 
-   public ContactData(String firstName, String middleName, String lastName, String nickname, String address, String mobileNum, String persEmail)
-   {
-      this.firstName = firstName;
+   public ContactData withMiddleName(String middleName) {
       this.middleName = middleName;
+      return this;
+   }
+
+   public ContactData withLastName(String lastName) {
       this.lastName = lastName;
+      return this;
+   }
+
+   public ContactData withNickname(String nickname) {
       this.nickname = nickname;
+      return this;
+   }
+
+   public ContactData withAddress(String address) {
       this.address = address;
+      return this;
+   }
+
+   public ContactData withMobileNum(String mobileNum) {
       this.mobileNum = mobileNum;
+      return this;
+   }
+
+   public ContactData withPersEmail(String persEmail) {
       this.persEmail = persEmail;
-      this.id = Integer.MAX_VALUE;
+      return this;
+   }
+
+   public ContactData withId(int id) {
+      this.id = id;
+      return this;
    }
 
    public int getId() {
       return id;
-   }
-
-   public void setId(int id) {
-      this.id = id;
    }
 
    public String getFirstName()
