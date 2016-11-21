@@ -5,8 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import spkrash.krashinc.addressbook.model.ContactData;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Krash on 27.10.2016.
@@ -44,9 +45,9 @@ public class ContactHelper extends HelperBase {
       clickItem(By.linkText("add new"));
    }
 
-   public void initContactModification(int index)
+   public void initContactModification(int id)
    {
-      clickItem(By.xpath("//table[@id='maintable']/tbody/tr[" + (index + 2) + "]/td[8]/a/img"));
+      clickItem(By.xpath("//td[@class='center'][input[@id='" + id + "']]/following-sibling::*[@class='center']//img[@title='Edit']"));
    }
 
    public void confirmContactModification()
@@ -57,6 +58,11 @@ public class ContactHelper extends HelperBase {
    public void selectContact(int index)
    {
       wd.findElements(By.name("selected[]")).get(index).click();
+   }
+
+   public void selectContactById(int id)
+   {
+      wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
    }
 
    public void submitAlert()
@@ -76,8 +82,8 @@ public class ContactHelper extends HelperBase {
       returnToHomePage();
    }
 
-   public void modify(int index, ContactData contact) {
-      initContactModification(index);
+   public void modify(ContactData contact) {
+      initContactModification(contact.getId());
       fillContactForm(contact);
       confirmContactModification();
       returnToHomePage();
@@ -87,8 +93,8 @@ public class ContactHelper extends HelperBase {
       return wd.findElements(By.name("selected[]")).size();
    }
 
-   public List<ContactData> list() {
-      List<ContactData> contacts = new ArrayList<>();
+   public Set<ContactData> all() {
+      Set<ContactData> contacts = new HashSet<ContactData>();
       List<WebElement> elements = wd.findElements(By.name("selected[]"));
       for (int i = 2; i < elements.size() + 2; i++) {
          String firstName = wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[" + i + "]/td[3]")).getText();
@@ -98,15 +104,14 @@ public class ContactHelper extends HelperBase {
          contacts.add(new ContactData().withFirstName(firstName).withLastName(lastName).withAddress(address).withId(id));
       }
       return contacts;
-
    }
 
    public boolean isThereAContact() {
       return isElementPresent(By.name("selected[]"));
    }
 
-   public void delete(int index) {
-      selectContact(index);
+   public void delete(ContactData contact) {
+      selectContactById(contact.getId());
       deleteContact();
       submitAlert();
    }
