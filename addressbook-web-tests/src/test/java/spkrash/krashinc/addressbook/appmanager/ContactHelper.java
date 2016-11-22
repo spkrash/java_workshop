@@ -80,6 +80,7 @@ public class ContactHelper extends HelperBase {
       initContactCreation();
       fillContactForm(contact);
       confirmContactCreation();
+      contactCash = null;
       returnToHomePage();
    }
 
@@ -87,6 +88,7 @@ public class ContactHelper extends HelperBase {
       initContactModification(contact.getId());
       fillContactForm(contact);
       confirmContactModification();
+      contactCash = null;
       returnToHomePage();
    }
 
@@ -94,17 +96,22 @@ public class ContactHelper extends HelperBase {
       return wd.findElements(By.name("selected[]")).size();
    }
 
+   private Contacts contactCash = null;
+
    public Contacts all() {
-      Contacts contacts = new Contacts();
+      if (contactCash != null){
+         return new Contacts(contactCash);
+      }
+      contactCash = new Contacts();
       List<WebElement> elements = wd.findElements(By.name("selected[]"));
       for (int i = 2; i < elements.size() + 2; i++) {
          String firstName = wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[" + i + "]/td[3]")).getText();
          String lastName = wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[" + i + "]/td[2]")).getText();
          String address = wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[" + i + "]/td[4]")).getText();
          int id = Integer.parseInt(wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[" + i + "]/td[1]/input")).getAttribute("value"));
-         contacts.add(new ContactData().withFirstName(firstName).withLastName(lastName).withAddress(address).withId(id));
+         contactCash.add(new ContactData().withFirstName(firstName).withLastName(lastName).withAddress(address).withId(id));
       }
-      return contacts;
+      return new Contacts(contactCash);
    }
 
    public boolean isThereAContact() {
@@ -114,6 +121,7 @@ public class ContactHelper extends HelperBase {
    public void delete(ContactData contact) {
       selectContactById(contact.getId());
       deleteContact();
+      contactCash = null;
       submitAlert();
    }
 }
