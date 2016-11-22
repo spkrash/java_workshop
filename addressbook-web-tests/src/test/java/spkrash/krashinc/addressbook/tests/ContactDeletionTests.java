@@ -1,11 +1,18 @@
 package spkrash.krashinc.addressbook.tests;
 
+import org.hamcrest.CoreMatchers;
+import org.hamcrest.MatcherAssert;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import spkrash.krashinc.addressbook.model.ContactData;
+import spkrash.krashinc.addressbook.model.Contacts;
 
 import java.util.Set;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.testng.Assert.assertEquals;
 
 /**
  * Created by Krash on 28.10.2016.
@@ -25,14 +32,12 @@ public class ContactDeletionTests extends TestBase {
    @Test
    public void testContactDeletion()
    {
-      Set<ContactData> before = app.contact().all();
+      Contacts before = app.contact().all();
       ContactData deletedContact = before.iterator().next();
       app.contact().delete(deletedContact);
       app.goTo().homePage();
-      Set<ContactData> after = app.contact().all();
-      Assert.assertEquals(after.size(), before.size() - 1);
-
-      before.remove(deletedContact);
-      Assert.assertEquals(before, after);
+      Contacts after = app.contact().all();
+      assertThat(after.size(), equalTo(before.size() - 1));
+      assertThat(after, equalTo(before.withOut(deletedContact)));
    }
 }

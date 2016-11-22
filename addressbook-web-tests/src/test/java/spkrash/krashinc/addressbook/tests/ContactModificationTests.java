@@ -1,11 +1,17 @@
 package spkrash.krashinc.addressbook.tests;
 
+import org.hamcrest.CoreMatchers;
+import org.hamcrest.MatcherAssert;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import spkrash.krashinc.addressbook.model.ContactData;
+import spkrash.krashinc.addressbook.model.Contacts;
 
 import java.util.Set;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 /**
  * Created by Krash on 28.10.2016.
@@ -25,18 +31,15 @@ public class ContactModificationTests extends TestBase {
    @Test
    public void testContactModification()
    {
-      Set<ContactData> before = app.contact().all();
+      Contacts before = app.contact().all();
       ContactData modifiedContact = before.iterator().next();
       ContactData contact = new ContactData().withFirstName("Bruce.2").withMiddleName("<B.2>")
             .withLastName("Wayne.2").withNickname("Batman.2").withAddress("Gotham City.2")
             .withMobileNum("+380511111111").withPersEmail("batman.2@gotham.com")
             .withId(modifiedContact.getId());
       app.contact().modify(contact);
-      Set<ContactData> after = app.contact().all();
-      Assert.assertEquals(after.size(), before.size());
-
-      before.remove(modifiedContact);
-      before.add(contact);
-      Assert.assertEquals(before, after);
+      Contacts after = app.contact().all();
+      assertThat(after.size(), equalTo(before.size()));
+      assertThat(after, equalTo(before.withOut(modifiedContact).withAdded(contact)));
    }
 }
