@@ -6,9 +6,7 @@ import org.openqa.selenium.WebElement;
 import spkrash.krashinc.addressbook.model.ContactData;
 import spkrash.krashinc.addressbook.model.Contacts;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by Krash on 27.10.2016.
@@ -92,7 +90,7 @@ public class ContactHelper extends HelperBase {
       returnToHomePage();
    }
 
-   public int getContactCount() {
+   public int count() {
       return wd.findElements(By.name("selected[]")).size();
    }
 

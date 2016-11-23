@@ -6,9 +6,7 @@ import org.openqa.selenium.WebElement;
 import spkrash.krashinc.addressbook.model.GroupData;
 import spkrash.krashinc.addressbook.model.Groups;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by Krash on 26.10.2016.
@@ -73,7 +71,7 @@ public class GroupHelper extends HelperBase {
       return isElementPresent(By.name("selected[]"));
    }
 
-   public int getGroupCount() {
+   public int count() {
       return wd.findElements(By.name("selected[]")).size();
    }
 

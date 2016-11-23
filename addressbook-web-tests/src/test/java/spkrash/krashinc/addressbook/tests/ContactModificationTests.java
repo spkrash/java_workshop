@@ -1,14 +1,9 @@
 package spkrash.krashinc.addressbook.tests;
 
-import org.hamcrest.CoreMatchers;
-import org.hamcrest.MatcherAssert;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import spkrash.krashinc.addressbook.model.ContactData;
 import spkrash.krashinc.addressbook.model.Contacts;
-
-import java.util.Set;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -38,8 +33,8 @@ public class ContactModificationTests extends TestBase {
             .withMobileNum("+380511111111").withPersEmail("batman.2@gotham.com")
             .withId(modifiedContact.getId());
       app.contact().modify(contact);
+      assertThat(app.contact().count(), equalTo(before.size()));
       Contacts after = app.contact().all();
-      assertThat(after.size(), equalTo(before.size()));
       assertThat(after, equalTo(before.withOut(modifiedContact).withAdded(contact)));
    }
 }

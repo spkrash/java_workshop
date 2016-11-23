@@ -1,18 +1,12 @@
 package spkrash.krashinc.addressbook.tests;
 
-import org.hamcrest.CoreMatchers;
-import org.hamcrest.MatcherAssert;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import spkrash.krashinc.addressbook.model.GroupData;
 import spkrash.krashinc.addressbook.model.Groups;
 
-import java.util.Set;
-
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.testng.Assert.assertEquals;
 
 /**
  * Created by Krash on 28.10.2016.
@@ -35,8 +29,8 @@ public class GroupModificationTests extends TestBase {
       GroupData group = new GroupData()
             .withName("testGroupModified").withHeader("headerGrModified").withFooter("footerGrModified").withId(modifiedGroup.getId());
       app.group().modify(group);
+      assertThat(app.group().count(), equalTo(before.size()));
       Groups after = app.group().all();
-      assertThat(after.size(), equalTo(before.size()));
       assertThat(after, equalTo(before.withOut(modifiedGroup).withAdded(group)));
    }
 }
