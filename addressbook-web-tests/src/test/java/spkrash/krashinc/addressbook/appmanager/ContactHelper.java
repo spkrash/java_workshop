@@ -25,7 +25,9 @@ public class ContactHelper extends HelperBase {
       fillTextField(By.name("lastname"), contactData.getLastName());
       fillTextField(By.name("nickname"), contactData.getNickname());
       fillTextField(By.name("address"), contactData.getAddress());
+      fillTextField(By.name("home"), contactData.getHomePhone());
       fillTextField(By.name("mobile"), contactData.getMobileNum());
+      fillTextField(By.name("work"), contactData.getWorkPhone());
       fillTextField(By.name("email"), contactData.getPersEmail());
    }
 
@@ -97,7 +99,7 @@ public class ContactHelper extends HelperBase {
    private Contacts contactCash = null;
 
    public Contacts all() {
-      if (contactCash != null){
+      if (contactCash != null) {
          return new Contacts(contactCash);
       }
       contactCash = new Contacts();
@@ -122,4 +124,21 @@ public class ContactHelper extends HelperBase {
       contactCash = null;
       submitAlert();
    }
+
+   public ContactData infoFromEditForm(ContactData contact) {
+      initContactModification(contact.getId());
+      String firstname = wd.findElement(By.name("firstname")).getAttribute("value");
+      String lastname = wd.findElement(By.name("lastname")).getAttribute("value");
+      String address = wd.findElement(By.name("address")).getAttribute("value");
+      String home = wd.findElement(By.name("home")).getAttribute("value");
+      String work = wd.findElement(By.name("work")).getAttribute("value");
+      String mobile = wd.findElement(By.name("mobile")).getAttribute("value");
+      String email = wd.findElement(By.name("email")).getAttribute("value");
+      wd.navigate().back();
+      return new ContactData().withId(contact.getId()).withFirstName(firstname)
+            .withLastName(lastname).withAddress(address).withHomePhone(home)
+            .withWorkPhone(work).withMobileNum(mobile).withPersEmail(email);
+
+   }
 }
+
