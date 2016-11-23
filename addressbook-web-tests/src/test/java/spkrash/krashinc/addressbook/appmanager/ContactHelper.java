@@ -108,8 +108,12 @@ public class ContactHelper extends HelperBase {
          String firstName = wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[" + i + "]/td[3]")).getText();
          String lastName = wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[" + i + "]/td[2]")).getText();
          String address = wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[" + i + "]/td[4]")).getText();
+         String email = wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[" + i + "]/td[5]")).getText();
+         String[] allPhones = wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[" + i + "]/td[6]")).getText().split("\n");
+
          int id = Integer.parseInt(wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[" + i + "]/td[1]/input")).getAttribute("value"));
-         contactCash.add(new ContactData().withFirstName(firstName).withLastName(lastName).withAddress(address).withId(id));
+         contactCash.add(new ContactData().withFirstName(firstName).withLastName(lastName).withAddress(address).withId(id).withPersEmail(email)
+               .withMobileNum(allPhones[1]).withHomePhone(allPhones[0]).withWorkPhone(allPhones[2]));
       }
       return new Contacts(contactCash);
    }
