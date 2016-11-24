@@ -116,7 +116,7 @@ public class ContactHelper extends HelperBase {
          String allPhones = wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[" + i + "]/td[6]")).getText();
          int id = Integer.parseInt(wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[" + i + "]/td[1]/input")).getAttribute("value"));
 
-         contactCash.add(new ContactData().withFirstName(firstName).withLastName(lastName).withAddress(address).withId(id).withEmail(allEmails)
+         contactCash.add(new ContactData().withFirstName(firstName).withLastName(lastName).withAddress(address).withId(id).withAllEmail(allEmails)
                .withAllPhones(allPhones));
       }
       return new Contacts(contactCash);
