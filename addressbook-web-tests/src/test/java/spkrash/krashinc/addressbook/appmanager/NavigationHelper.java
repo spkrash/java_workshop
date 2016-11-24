@@ -30,4 +30,10 @@ public class NavigationHelper extends HelperBase {
       clickItem(By.linkText("home"));
    }
 
+   public void contactInfoById(int id) {
+      if (isElementPresent(By.name("print"))) {
+         return;
+      }
+      clickItem(By.xpath("//td[@class='center'][input[@id='" + id + "']]/following-sibling::*[@class='center']//img[@title='Details']"));
+   }
 }

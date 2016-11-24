@@ -34,6 +34,7 @@ public class ContactData {
       this.email3 = email3;
       return this;
    }
+
    public ContactData withAllEmail(String allEmails) {
       this.allEmails = allEmails;
       return this;

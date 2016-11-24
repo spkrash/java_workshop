@@ -13,6 +13,8 @@ import java.util.List;
  */
 public class GroupHelper extends HelperBase {
 
+   private Groups groupCash = null;
+
    public GroupHelper(WebDriver wd)
    {
       super(wd);
@@ -83,8 +85,6 @@ public class GroupHelper extends HelperBase {
       groupCash = null;
       returnToGroupPage();
    }
-
-   private Groups groupCash = null;
 
    public Groups all() {
       if (groupCash != null) {

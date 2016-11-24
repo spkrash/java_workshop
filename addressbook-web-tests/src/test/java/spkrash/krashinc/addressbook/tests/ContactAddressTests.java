@@ -23,6 +23,7 @@ public class ContactAddressTests extends TestBase {
                .withWorkPhone("+380600000000"));
       }
    }
+
    @Test
    public void testContactEmails() {
       ContactData contact = app.contact().all().iterator().next();

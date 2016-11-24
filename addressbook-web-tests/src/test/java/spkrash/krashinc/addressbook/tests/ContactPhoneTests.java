@@ -15,6 +15,10 @@ import static org.hamcrest.MatcherAssert.assertThat;
  */
 public class ContactPhoneTests extends TestBase {
 
+   public static String cleaned(String phone) {
+      return phone.replaceAll("\\s", "").replaceAll("[-()]", "");
+   }
+
    @BeforeMethod
    public void ensurePreconditions() {
       app.goTo().homePage();
@@ -36,11 +40,7 @@ public class ContactPhoneTests extends TestBase {
 
    private String mergePhone(ContactData contact) {
       return Arrays.asList(contact.getHomePhone(), contact.getMobilePhone(), contact.getWorkPhone(), contact.getHomePhone2())
-            .stream().filter((s) -> ! s.equals("")).map(ContactPhoneTests::cleaned).collect(Collectors.joining("\n"));
-   }
-
-   public static String cleaned(String phone){
-      return phone.replaceAll("\\s", "").replaceAll("[-()]", "");
+            .stream().filter((s) -> !s.equals("")).map(ContactPhoneTests::cleaned).collect(Collectors.joining("\n"));
    }
 }
 

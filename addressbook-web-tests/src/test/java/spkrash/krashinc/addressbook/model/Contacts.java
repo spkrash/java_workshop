@@ -25,13 +25,13 @@ public class Contacts extends ForwardingSet<ContactData> {
       return delegate;
    }
 
-   public Contacts withAdded(ContactData contact){
+   public Contacts withAdded(ContactData contact) {
       Contacts contacts = new Contacts(this);
       contacts.add(contact);
       return contacts;
    }
 
-   public Contacts withOut(ContactData contact){
+   public Contacts withOut(ContactData contact) {
       Contacts contacts = new Contacts(this);
       contacts.remove(contact);
       return contacts;
