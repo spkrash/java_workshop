@@ -1,5 +1,6 @@
 package spkrash.krashinc.addressbook.tests;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import spkrash.krashinc.addressbook.model.ContactData;
 
@@ -14,8 +15,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
  */
 public class ContactEmailsTests extends TestBase {
 
-   @Test
-   public void testContactEmails() {
+   @BeforeMethod
+   public void ensurePreconditions() {
       app.goTo().homePage();
       if (app.contact().all().size() == 0) {
          app.contact().create(new ContactData()
@@ -24,6 +25,9 @@ public class ContactEmailsTests extends TestBase {
                .withEmail3("batman3@gotham.com").withMobileNum("+380500000000").withHomePhone("+380400000000")
                .withWorkPhone("+380600000000"));
       }
+   }
+   @Test
+   public void testContactEmails() {
       ContactData contact = app.contact().all().iterator().next();
       ContactData contactInfoFromEditForm = app.contact().infoFromEditForm(contact);
       assertThat(contact.getAllEmails(), equalTo(mergeEmails(contactInfoFromEditForm)));
