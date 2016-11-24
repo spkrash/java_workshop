@@ -6,11 +6,53 @@ public class ContactData {
    private String lastName;
    private String nickname;
    private String address;
-   private String mobileNum;
+   private String mobilePhone;
    private String homePhone;
+   private String homePhone2;
    private String workPhone;
-   private String persEmail;
+   private String allPhones;
+   private String email;
+   private String email2;
+   private String email3;
    private int id = Integer.MAX_VALUE;
+
+   public String getEmail2() {
+      return email2;
+   }
+
+   public ContactData withEmail2(String email2) {
+      this.email2 = email2;
+      return this;
+   }
+
+   public String getEmail3() {
+      return email3;
+   }
+
+   public ContactData withEmail3(String email3) {
+      this.email3 = email3;
+      return this;
+   }
+
+   public String getHomePhone2() {
+      return homePhone2;
+   }
+
+   public ContactData withHomePhone2(String homePhone2) {
+      this.homePhone2 = homePhone2;
+      return this;
+   }
+
+
+   public String getAllPhones() {
+      return allPhones;
+   }
+
+   public ContactData withAllPhones(String allPhones) {
+      this.allPhones = allPhones;
+      return this;
+   }
+
 
    public ContactData withFirstName(String firstName) {
       this.firstName = firstName;
@@ -38,7 +80,7 @@ public class ContactData {
    }
 
    public ContactData withMobileNum(String mobileNum) {
-      this.mobileNum = mobileNum;
+      this.mobilePhone = mobileNum;
       return this;
    }
 
@@ -52,8 +94,8 @@ public class ContactData {
       return this;
    }
 
-   public ContactData withPersEmail(String persEmail) {
-      this.persEmail = persEmail;
+   public ContactData withEmail(String email) {
+      this.email = email;
       return this;
    }
 
@@ -91,9 +133,9 @@ public class ContactData {
       return address;
    }
 
-   public String getMobileNum()
+   public String getMobilePhone()
    {
-      return mobileNum;
+      return mobilePhone;
    }
 
    public String getHomePhone()
@@ -106,9 +148,9 @@ public class ContactData {
       return workPhone;
    }
 
-   public String getPersEmail()
+   public String getEmail()
    {
-      return persEmail;
+      return email;
    }
 
    @Override
