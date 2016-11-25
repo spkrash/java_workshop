@@ -1,0 +1,52 @@
+<list>
+  <group>
+    <name>Group Name 0</name>
+    <header>Group Header 0</header>
+    <footer>Group Footer 0</footer>
+  </group>
+  <group>
+    <name>Group Name 1</name>
+    <header>Group Header 1</header>
+    <footer>Group Footer 1</footer>
+  </group>
+  <group>
+    <name>Group Name 2</name>
+    <header>Group Header 2</header>
+    <footer>Group Footer 2</footer>
+  </group>
+  <group>
+    <name>Group Name 3</name>
+    <header>Group Header 3</header>
+    <footer>Group Footer 3</footer>
+  </group>
+  <group>
+    <name>Group Name 4</name>
+    <header>Group Header 4</header>
+    <footer>Group Footer 4</footer>
+  </group>
+  <group>
+    <name>Group Name 5</name>
+    <header>Group Header 5</header>
+    <footer>Group Footer 5</footer>
+  </group>
+  <group>
+    <name>Group Name 6</name>
+    <header>Group Header 6</header>
+    <footer>Group Footer 6</footer>
+  </group>
+  <group>
+    <name>Group Name 7</name>
+    <header>Group Header 7</header>
+    <footer>Group Footer 7</footer>
+  </group>
+  <group>
+    <name>Group Name 8</name>
+    <header>Group Header 8</header>
+    <footer>Group Footer 8</footer>
+  </group>
+  <group>
+    <name>Group Name 9</name>
+    <header>Group Header 9</header>
+    <footer>Group Footer 9</footer>
+  </group>
+</list>
