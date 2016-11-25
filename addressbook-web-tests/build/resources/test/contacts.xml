@@ -1,6 +1,7 @@
 <list>
   <contact>
     <firstName>Bruce 0</firstName>
+    <middleName>(B) 0</middleName>
     <lastName>Wayne 0</lastName>
     <nickname>Batman 0</nickname>
     <address>Gotham City 0</address>
@@ -14,6 +15,7 @@
   </contact>
   <contact>
     <firstName>Bruce 1</firstName>
+    <middleName>(B) 1</middleName>
     <lastName>Wayne 1</lastName>
     <nickname>Batman 1</nickname>
     <address>Gotham City 1</address>
@@ -27,6 +29,7 @@
   </contact>
   <contact>
     <firstName>Bruce 2</firstName>
+    <middleName>(B) 2</middleName>
     <lastName>Wayne 2</lastName>
     <nickname>Batman 2</nickname>
     <address>Gotham City 2</address>
@@ -40,6 +43,7 @@
   </contact>
   <contact>
     <firstName>Bruce 3</firstName>
+    <middleName>(B) 3</middleName>
     <lastName>Wayne 3</lastName>
     <nickname>Batman 3</nickname>
     <address>Gotham City 3</address>
@@ -53,6 +57,7 @@
   </contact>
   <contact>
     <firstName>Bruce 4</firstName>
+    <middleName>(B) 4</middleName>
     <lastName>Wayne 4</lastName>
     <nickname>Batman 4</nickname>
     <address>Gotham City 4</address>
@@ -66,6 +71,7 @@
   </contact>
   <contact>
     <firstName>Bruce 5</firstName>
+    <middleName>(B) 5</middleName>
     <lastName>Wayne 5</lastName>
     <nickname>Batman 5</nickname>
     <address>Gotham City 5</address>
@@ -79,6 +85,7 @@
   </contact>
   <contact>
     <firstName>Bruce 6</firstName>
+    <middleName>(B) 6</middleName>
     <lastName>Wayne 6</lastName>
     <nickname>Batman 6</nickname>
     <address>Gotham City 6</address>
@@ -92,6 +99,7 @@
   </contact>
   <contact>
     <firstName>Bruce 7</firstName>
+    <middleName>(B) 7</middleName>
     <lastName>Wayne 7</lastName>
     <nickname>Batman 7</nickname>
     <address>Gotham City 7</address>
@@ -105,6 +113,7 @@
   </contact>
   <contact>
     <firstName>Bruce 8</firstName>
+    <middleName>(B) 8</middleName>
     <lastName>Wayne 8</lastName>
     <nickname>Batman 8</nickname>
     <address>Gotham City 8</address>
@@ -118,6 +127,7 @@
   </contact>
   <contact>
     <firstName>Bruce 9</firstName>
+    <middleName>(B) 9</middleName>
     <lastName>Wayne 9</lastName>
     <nickname>Batman 9</nickname>
     <address>Gotham City 9</address>

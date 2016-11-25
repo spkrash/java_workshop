@@ -3,7 +3,11 @@ package spkrash.krashinc.addressbook.Generators;
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.ParameterException;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.thoughtworks.xstream.XStream;
 import spkrash.krashinc.addressbook.model.ContactData;
+import spkrash.krashinc.addressbook.model.GroupData;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -22,6 +26,9 @@ public class ContactDataGenerator {
    @Parameter(names = "-f", description = "Target file")
    public String file;
 
+   @Parameter(names = "-d", description = "Data format")
+   public String format;
+
    public static void main(String[] args) throws IOException {
       ContactDataGenerator generator = new ContactDataGenerator();
       JCommander jCommander = new JCommander(generator);
@@ -36,15 +43,41 @@ public class ContactDataGenerator {
 
    private void run() throws IOException {
       List<ContactData> contacts = generateContacts(count);
-      save(contacts, new File(file));
+      if (format.equals("csv")) {
+         saveAsCsv(contacts, new File(file));
+      } else if (format.equals("xml")){
+         saveAsXml(contacts, new File(file));
+      } else if (format.equals("json")){
+         saveAsJson(contacts, new File(file));
+      } else {
+         System.out.println("Unrecognized format" + format);
+      }
    }
 
-   private void save(List<ContactData> contacts, File file) throws IOException {
+   private void saveAsJson(List<ContactData> contacts, File file) throws IOException {
+      Gson gson = new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create();
+      String json = gson.toJson(contacts);
+      Writer writer = new FileWriter(file);
+      writer.write(json);
+      writer.close();
+   }
+
+   private void saveAsXml(List<ContactData> contacts, File file) throws IOException {
+      XStream xstream = new XStream();
+      xstream.processAnnotations(ContactData.class);
+      String xml = xstream.toXML(contacts);
+      Writer writer = new FileWriter(file);
+      writer.write(xml);
+      writer.close();
+   }
+
+
+   private void saveAsCsv(List<ContactData> contacts, File file) throws IOException {
       Writer writer = new FileWriter(file);
       for (ContactData contact : contacts) {
-         writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n", contact.getFirstName(), contact.getMiddleName()
+         writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n", contact.getFirstName(), contact.getMiddleName()
                , contact.getLastName(), contact.getNickname(), contact.getAddress(), contact.getMobilePhone(), contact.getEmail()
-               , contact.getHomePhone(), contact.getWorkPhone(), contact.getEmail2(), contact.getEmail3()));
+               , contact.getHomePhone(), contact.getWorkPhone(), contact.getEmail2(), contact.getEmail3(), contact.getHomePhone2()));
       }
       writer.close();
    }
@@ -52,12 +85,12 @@ public class ContactDataGenerator {
    private List<ContactData> generateContacts(int count) {
       List<ContactData> contacts = new ArrayList<ContactData>();
       for (int i = 0; i < count; i++) {
-         contacts.add(new ContactData().withFirstName(String.format("Bruce %s", i)).withMiddleName(String.format("<B> %s", i))
+         contacts.add(new ContactData().withFirstName(String.format("Bruce %s", i)).withMiddleName(String.format("(B) %s", i))
                .withLastName(String.format("Wayne %s", i)).withNickname(String.format("Batman %s", i))
                .withAddress(String.format("Gotham City %s", i)).withMobileNum(String.format("+38050%s%s%s%s%s%s%s", i, i, i, i, i, i, i))
-               .withEmail(String.format("batman%s@gotham.com", i)).withHomePhone(String.format("+380400000000 %s", i))
-               .withWorkPhone(String.format("+380600000000 %s", i)).withEmail2(String.format("bruce%s@gotham.com", i))
-               .withEmail3(String.format("wayne%s@gotham.com", i)));
+               .withEmail(String.format("batman%s@gotham.com", i)).withHomePhone(String.format("+38040%s%s%s%s%s%s%s", i, i, i, i, i, i, i))
+               .withWorkPhone(String.format("+38060%s%s%s%s%s%s%s", i, i, i, i, i, i, i)).withEmail2(String.format("bruce%s@gotham.com", i))
+               .withEmail3(String.format("wayne%s@gotham.com", i)).withHomePhone2(String.format("+38070%s%s%s%s%s%s%s", i, i, i, i, i, i, i)));
       }
       return contacts;
    }
