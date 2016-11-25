@@ -2,6 +2,8 @@ package spkrash.krashinc.addressbook.appmanager;
 
 import org.openqa.selenium.*;
 
+import java.io.File;
+
 /**
  * Created by Krash on 28.10.2016.
  */
@@ -27,6 +29,13 @@ public class HelperBase {
             element.clear();
             element.sendKeys(text);
          }
+      }
+   }
+
+   protected void attach(By locator, File file)
+   {
+      if (file != null) {
+         wd.findElement(locator).sendKeys(file.getAbsolutePath());
       }
    }
 

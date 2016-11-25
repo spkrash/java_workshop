@@ -34,6 +34,7 @@ public class ContactHelper extends HelperBase {
       fillTextField(By.name("email2"), contactData.getEmail2());
       fillTextField(By.name("email3"), contactData.getEmail3());
       fillTextField(By.name("phone2"), contactData.getHomePhone());
+      attach(By.name("photo"), contactData.getPhoto());
 
    }
 

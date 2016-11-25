@@ -1,5 +1,7 @@
 package spkrash.krashinc.addressbook.model;
 
+import java.io.File;
+
 public class ContactData {
    private String firstName;
    private String middleName;
@@ -16,6 +18,16 @@ public class ContactData {
    private String email3;
    private String allEmails;
    private int id = Integer.MAX_VALUE;
+   private File photo;
+
+   public File getPhoto() {
+      return photo;
+   }
+
+   public ContactData withPhoto(File photo) {
+      this.photo = photo;
+      return this;
+   }
 
    public String getEmail2() {
       return email2;

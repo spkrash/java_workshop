@@ -17,6 +17,9 @@ public class HelloWorld {
       System.out.println("Первая точка имеет координаты (" + dist.x1 + ";" + dist.y1 + ").");
       System.out.println("Вторая точка имеет координаты (" + dist.x2 + ";" + dist.y2 + ").");
       System.out.println("Расстояние между точками равно " + dist.distance() + ".");
+
+      tezzt();
+
    }
 
    public static void hello(String target)
@@ -27,5 +30,12 @@ public class HelloWorld {
    public static double distance(Point p1, Point p2)
    {
       return Math.sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y));
+   }
+
+
+   private static void tezzt() {
+      for (int i = 0; i < 10; i++) {
+         System.out.println(String.format("+38050%s%s%s%s%s%s%s", i, i, i, i, i, i, i));
+      }
    }
 }
