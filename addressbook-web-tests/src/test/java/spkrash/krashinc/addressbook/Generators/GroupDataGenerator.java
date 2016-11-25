@@ -17,10 +17,10 @@ import java.util.List;
  */
 public class GroupDataGenerator {
 
-   @Parameter (names = "-c", description = "Group count")
+   @Parameter(names = "-c", description = "Group count")
    public int count;
 
-   @Parameter (names = "-f", description = "Target file")
+   @Parameter(names = "-f", description = "Target file")
    public String file;
 
    public static void main(String[] args) throws IOException {
@@ -28,7 +28,7 @@ public class GroupDataGenerator {
       JCommander jCommander = new JCommander(generator);
       try {
          jCommander.parse(args);
-      } catch (ParameterException ex){
+      } catch (ParameterException ex) {
          jCommander.usage();
          return;
       }
@@ -42,7 +42,7 @@ public class GroupDataGenerator {
 
    private void save(List<GroupData> groups, File file) throws IOException {
       Writer writer = new FileWriter(file);
-      for (GroupData group : groups){
+      for (GroupData group : groups) {
          writer.write(String.format("%s;%s;%s\n", group.getName(), group.getHeader(), group.getFooter()));
       }
       writer.close();

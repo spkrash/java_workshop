@@ -32,10 +32,4 @@ public class HelloWorld {
       return Math.sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y));
    }
 
-
-   private static void tezzt() {
-      for (int i = 0; i < 10; i++) {
-         System.out.println(String.format("+38050%s%s%s%s%s%s%s", i, i, i, i, i, i, i));
-      }
-   }
 }

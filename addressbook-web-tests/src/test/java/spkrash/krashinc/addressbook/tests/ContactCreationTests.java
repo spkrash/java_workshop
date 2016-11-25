@@ -29,8 +29,8 @@ public class ContactCreationTests extends TestBase {
             before.withAdded(contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));
    }
 
-   @Test (enabled = false)
-   public void testCurrentDir(){
+   @Test(enabled = false)
+   public void testCurrentDir() {
       File currentDir = new File(".");
       System.out.println(currentDir.getAbsolutePath());
       File photo = new File("src/test/resources/avatar.png");

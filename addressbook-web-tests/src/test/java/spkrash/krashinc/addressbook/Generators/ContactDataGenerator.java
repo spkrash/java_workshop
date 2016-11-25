@@ -19,7 +19,7 @@ public class ContactDataGenerator {
    @Parameter(names = "-c", description = "Contact count")
    public int count;
 
-   @Parameter (names = "-f", description = "Target file")
+   @Parameter(names = "-f", description = "Target file")
    public String file;
 
    public static void main(String[] args) throws IOException {
@@ -27,7 +27,7 @@ public class ContactDataGenerator {
       JCommander jCommander = new JCommander(generator);
       try {
          jCommander.parse(args);
-      } catch (ParameterException ex){
+      } catch (ParameterException ex) {
          jCommander.usage();
          return;
       }
@@ -41,7 +41,7 @@ public class ContactDataGenerator {
 
    private void save(List<ContactData> contacts, File file) throws IOException {
       Writer writer = new FileWriter(file);
-      for (ContactData contact : contacts){
+      for (ContactData contact : contacts) {
          writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n", contact.getFirstName(), contact.getMiddleName()
                , contact.getLastName(), contact.getNickname(), contact.getAddress(), contact.getMobilePhone(), contact.getEmail()
                , contact.getHomePhone(), contact.getWorkPhone(), contact.getEmail2(), contact.getEmail3()));
