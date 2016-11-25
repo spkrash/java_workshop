@@ -4,6 +4,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import spkrash.krashinc.addressbook.model.ContactData;
 
+import java.io.File;
+
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
 
@@ -14,7 +16,7 @@ public class ContactInformationPageTests extends TestBase {
 
 
    public static String simplified(String phone) {
-      return phone.replaceAll("\n", "").replaceAll("[-()]", "");
+      return phone.replaceAll("\n", "");
    }
 
    @BeforeMethod
@@ -25,7 +27,7 @@ public class ContactInformationPageTests extends TestBase {
                .withFirstName("Bruce").withMiddleName("<B>").withLastName("Wayne").withNickname("Batman")
                .withAddress("Gotham City").withEmail("batman@gotham.com").withEmail2("batman2@gotham.com")
                .withEmail3("batman3@gotham.com").withMobileNum("+380500000000").withHomePhone("+380400000000")
-               .withWorkPhone("+380600000000"));
+               .withWorkPhone("+380600000000").withPhoto(new File("src/test/resources/avatar.png")));
       }
    }
 
@@ -34,6 +36,7 @@ public class ContactInformationPageTests extends TestBase {
    public void testContactInformationPage() {
       ContactData contact = app.contact().all().iterator().next();
       ContactData contactInfoFromEditForm = app.contact().infoFromEditForm(contact);
+      System.out.println(contactInfoFromEditForm);
       app.goTo().contactInfoById(contact.getId());
       assertThat(simplified(app.contact().infoFromInfoPage()), equalTo(simplified(mergedFromEditForInfo(contactInfoFromEditForm))));
    }
@@ -42,7 +45,13 @@ public class ContactInformationPageTests extends TestBase {
 
       String result = contactInfoFromEditForm.getFirstName();
 
-      if (!"".equals(contactInfoFromEditForm.getFirstName()) && !"".equals(contactInfoFromEditForm.getLastName())) {
+      if (!"".equals(contactInfoFromEditForm.getFirstName()) && !"".equals(contactInfoFromEditForm.getMiddleName())) {
+         result = result + " ";
+      }
+
+      result = result + contactInfoFromEditForm.getMiddleName();
+
+      if (!"".equals(result) && !"".equals(contactInfoFromEditForm.getLastName())){
          result = result + " ";
       }
 

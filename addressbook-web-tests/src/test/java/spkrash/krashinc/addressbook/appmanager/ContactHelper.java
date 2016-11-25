@@ -33,7 +33,7 @@ public class ContactHelper extends HelperBase {
       fillTextField(By.name("email"), contactData.getEmail());
       fillTextField(By.name("email2"), contactData.getEmail2());
       fillTextField(By.name("email3"), contactData.getEmail3());
-      fillTextField(By.name("phone2"), contactData.getHomePhone());
+      fillTextField(By.name("phone2"), contactData.getHomePhone2());
       attach(By.name("photo"), contactData.getPhoto());
 
    }
@@ -137,6 +137,7 @@ public class ContactHelper extends HelperBase {
    public ContactData infoFromEditForm(ContactData contact) {
       initContactModification(contact.getId());
       String firstname = wd.findElement(By.name("firstname")).getAttribute("value");
+      String middlename = wd.findElement(By.name("middlename")).getAttribute("value");
       String lastname = wd.findElement(By.name("lastname")).getAttribute("value");
       String nickname = wd.findElement(By.name("nickname")).getAttribute("value");
       String address = wd.findElement(By.name("address")).getAttribute("value");
@@ -149,7 +150,7 @@ public class ContactHelper extends HelperBase {
       String email3 = wd.findElement(By.name("email3")).getAttribute("value");
       wd.navigate().back();
 
-      return new ContactData().withId(contact.getId()).withFirstName(firstname)
+      return new ContactData().withId(contact.getId()).withFirstName(firstname).withMiddleName(middlename)
             .withLastName(lastname).withAddress(address).withHomePhone(home)
             .withWorkPhone(work).withMobileNum(mobile).withEmail(email).withEmail2(email2).withEmail3(email3)
             .withHomePhone2(phone2).withNickname(nickname);

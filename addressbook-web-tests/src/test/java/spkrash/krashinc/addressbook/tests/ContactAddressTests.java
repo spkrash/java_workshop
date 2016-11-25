@@ -4,6 +4,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import spkrash.krashinc.addressbook.model.ContactData;
 
+import java.io.File;
+
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -20,7 +22,7 @@ public class ContactAddressTests extends TestBase {
                .withFirstName("Bruce").withMiddleName("<B>").withLastName("Wayne").withNickname("Batman")
                .withAddress("Gotham City").withEmail("batman@gotham.com").withEmail2("batman2@gotham.com")
                .withEmail3("batman3@gotham.com").withMobileNum("+380500000000").withHomePhone("+380400000000")
-               .withWorkPhone("+380600000000"));
+               .withWorkPhone("+380600000000").withPhoto(new File("src/test/resources/avatar.png")));
       }
    }
 

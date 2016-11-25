@@ -1,0 +1,142 @@
+<list>
+  <contact>
+    <firstName>Bruce 0</firstName>
+    <middleName>(B) 0</middleName>
+    <lastName>Wayne 0</lastName>
+    <nickname>Batman 0</nickname>
+    <address>Gotham City 0</address>
+    <mobilePhone>+380500000000</mobilePhone>
+    <homePhone>+380400000000</homePhone>
+    <homePhone2>+380700000000</homePhone2>
+    <workPhone>+380600000000</workPhone>
+    <email>batman0@gotham.com</email>
+    <email2>bruce0@gotham.com</email2>
+    <email3>wayne0@gotham.com</email3>
+  </contact>
+  <contact>
+    <firstName>Bruce 1</firstName>
+    <middleName>(B) 1</middleName>
+    <lastName>Wayne 1</lastName>
+    <nickname>Batman 1</nickname>
+    <address>Gotham City 1</address>
+    <mobilePhone>+380501111111</mobilePhone>
+    <homePhone>+380401111111</homePhone>
+    <homePhone2>+380701111111</homePhone2>
+    <workPhone>+380601111111</workPhone>
+    <email>batman1@gotham.com</email>
+    <email2>bruce1@gotham.com</email2>
+    <email3>wayne1@gotham.com</email3>
+  </contact>
+  <contact>
+    <firstName>Bruce 2</firstName>
+    <middleName>(B) 2</middleName>
+    <lastName>Wayne 2</lastName>
+    <nickname>Batman 2</nickname>
+    <address>Gotham City 2</address>
+    <mobilePhone>+380502222222</mobilePhone>
+    <homePhone>+380402222222</homePhone>
+    <homePhone2>+380702222222</homePhone2>
+    <workPhone>+380602222222</workPhone>
+    <email>batman2@gotham.com</email>
+    <email2>bruce2@gotham.com</email2>
+    <email3>wayne2@gotham.com</email3>
+  </contact>
+  <contact>
+    <firstName>Bruce 3</firstName>
+    <middleName>(B) 3</middleName>
+    <lastName>Wayne 3</lastName>
+    <nickname>Batman 3</nickname>
+    <address>Gotham City 3</address>
+    <mobilePhone>+380503333333</mobilePhone>
+    <homePhone>+380403333333</homePhone>
+    <homePhone2>+380703333333</homePhone2>
+    <workPhone>+380603333333</workPhone>
+    <email>batman3@gotham.com</email>
+    <email2>bruce3@gotham.com</email2>
+    <email3>wayne3@gotham.com</email3>
+  </contact>
+  <contact>
+    <firstName>Bruce 4</firstName>
+    <middleName>(B) 4</middleName>
+    <lastName>Wayne 4</lastName>
+    <nickname>Batman 4</nickname>
+    <address>Gotham City 4</address>
+    <mobilePhone>+380504444444</mobilePhone>
+    <homePhone>+380404444444</homePhone>
+    <homePhone2>+380704444444</homePhone2>
+    <workPhone>+380604444444</workPhone>
+    <email>batman4@gotham.com</email>
+    <email2>bruce4@gotham.com</email2>
+    <email3>wayne4@gotham.com</email3>
+  </contact>
+  <contact>
+    <firstName>Bruce 5</firstName>
+    <middleName>(B) 5</middleName>
+    <lastName>Wayne 5</lastName>
+    <nickname>Batman 5</nickname>
+    <address>Gotham City 5</address>
+    <mobilePhone>+380505555555</mobilePhone>
+    <homePhone>+380405555555</homePhone>
+    <homePhone2>+380705555555</homePhone2>
+    <workPhone>+380605555555</workPhone>
+    <email>batman5@gotham.com</email>
+    <email2>bruce5@gotham.com</email2>
+    <email3>wayne5@gotham.com</email3>
+  </contact>
+  <contact>
+    <firstName>Bruce 6</firstName>
+    <middleName>(B) 6</middleName>
+    <lastName>Wayne 6</lastName>
+    <nickname>Batman 6</nickname>
+    <address>Gotham City 6</address>
+    <mobilePhone>+380506666666</mobilePhone>
+    <homePhone>+380406666666</homePhone>
+    <homePhone2>+380706666666</homePhone2>
+    <workPhone>+380606666666</workPhone>
+    <email>batman6@gotham.com</email>
+    <email2>bruce6@gotham.com</email2>
+    <email3>wayne6@gotham.com</email3>
+  </contact>
+  <contact>
+    <firstName>Bruce 7</firstName>
+    <middleName>(B) 7</middleName>
+    <lastName>Wayne 7</lastName>
+    <nickname>Batman 7</nickname>
+    <address>Gotham City 7</address>
+    <mobilePhone>+380507777777</mobilePhone>
+    <homePhone>+380407777777</homePhone>
+    <homePhone2>+380707777777</homePhone2>
+    <workPhone>+380607777777</workPhone>
+    <email>batman7@gotham.com</email>
+    <email2>bruce7@gotham.com</email2>
+    <email3>wayne7@gotham.com</email3>
+  </contact>
+  <contact>
+    <firstName>Bruce 8</firstName>
+    <middleName>(B) 8</middleName>
+    <lastName>Wayne 8</lastName>
+    <nickname>Batman 8</nickname>
+    <address>Gotham City 8</address>
+    <mobilePhone>+380508888888</mobilePhone>
+    <homePhone>+380408888888</homePhone>
+    <homePhone2>+380708888888</homePhone2>
+    <workPhone>+380608888888</workPhone>
+    <email>batman8@gotham.com</email>
+    <email2>bruce8@gotham.com</email2>
+    <email3>wayne8@gotham.com</email3>
+  </contact>
+  <contact>
+    <firstName>Bruce 9</firstName>
+    <middleName>(B) 9</middleName>
+    <lastName>Wayne 9</lastName>
+    <nickname>Batman 9</nickname>
+    <address>Gotham City 9</address>
+    <mobilePhone>+380509999999</mobilePhone>
+    <homePhone>+380409999999</homePhone>
+    <homePhone2>+380709999999</homePhone2>
+    <workPhone>+380609999999</workPhone>
+    <email>batman9@gotham.com</email>
+    <email2>bruce9@gotham.com</email2>
+    <email3>wayne9@gotham.com</email3>
+  </contact>
+</list>
