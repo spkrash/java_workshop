@@ -57,29 +57,29 @@ public class ContactDataGenerator {
    private void saveAsJson(List<ContactData> contacts, File file) throws IOException {
       Gson gson = new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create();
       String json = gson.toJson(contacts);
-      Writer writer = new FileWriter(file);
+      try (Writer writer = new FileWriter(file)) {
       writer.write(json);
-      writer.close();
+      }
    }
 
    private void saveAsXml(List<ContactData> contacts, File file) throws IOException {
       XStream xstream = new XStream();
       xstream.processAnnotations(ContactData.class);
       String xml = xstream.toXML(contacts);
-      Writer writer = new FileWriter(file);
-      writer.write(xml);
-      writer.close();
+      try (Writer writer = new FileWriter(file)) {
+         writer.write(xml);
+      }
    }
 
 
    private void saveAsCsv(List<ContactData> contacts, File file) throws IOException {
-      Writer writer = new FileWriter(file);
-      for (ContactData contact : contacts) {
-         writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n", contact.getFirstName(), contact.getMiddleName()
-               , contact.getLastName(), contact.getNickname(), contact.getAddress(), contact.getMobilePhone(), contact.getEmail()
-               , contact.getHomePhone(), contact.getWorkPhone(), contact.getEmail2(), contact.getEmail3(), contact.getHomePhone2()));
+      try (Writer writer = new FileWriter(file)) {
+         for (ContactData contact : contacts) {
+            writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n", contact.getFirstName(), contact.getMiddleName()
+                  , contact.getLastName(), contact.getNickname(), contact.getAddress(), contact.getMobilePhone(), contact.getEmail()
+                  , contact.getHomePhone(), contact.getWorkPhone(), contact.getEmail2(), contact.getEmail3(), contact.getHomePhone2()));
+         }
       }
-      writer.close();
    }
 
    private List<ContactData> generateContacts(int count) {
