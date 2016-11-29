@@ -3,6 +3,8 @@ package spkrash.krashinc.addressbook.tests;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.thoughtworks.xstream.XStream;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import spkrash.krashinc.addressbook.model.GroupData;
@@ -57,8 +59,7 @@ public class GroupCreationTests extends TestBase {
    }
 
    @Test(dataProvider = "validGroupsFromXml")
-   public void testGroupCreation(GroupData group)
-   {
+   public void testGroupCreation(GroupData group) {
       app.goTo().groupPage();
       Groups before = app.group().all();
       app.group().create(group);
