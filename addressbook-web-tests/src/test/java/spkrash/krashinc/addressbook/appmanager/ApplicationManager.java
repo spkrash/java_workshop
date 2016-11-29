@@ -28,7 +28,7 @@ public class ApplicationManager {
    private GroupHelper groupHelper;
    private String browser;
 
-   public ApplicationManager(String browser) throws IOException {
+   public ApplicationManager(String browser) {
       this.browser = browser;
       properties = new Properties();
    }
@@ -51,7 +51,7 @@ public class ApplicationManager {
       sessionHelper = new SessionHelper(wd);
       groupHelper = new GroupHelper(wd);
       navigationHelper = new NavigationHelper(wd);
-      sessionHelper.login(properties.getProperty("web.adminLogin"), properties.getProperty("webPassword"));
+      sessionHelper.login(properties.getProperty("web.adminLogin"), properties.getProperty("web.adminPassword"));
    }
 
    public void stop()
