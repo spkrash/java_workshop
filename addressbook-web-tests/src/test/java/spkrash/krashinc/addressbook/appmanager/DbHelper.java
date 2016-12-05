@@ -6,6 +6,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import spkrash.krashinc.addressbook.model.ContactData;
+import spkrash.krashinc.addressbook.model.Contacts;
 import spkrash.krashinc.addressbook.model.GroupData;
 import spkrash.krashinc.addressbook.model.Groups;
 
@@ -34,4 +35,11 @@ public class DbHelper {
       return new Groups(result);
    }
 
-}
+   public Contacts contacts(){
+      Session session = sessionFactory.openSession();
+      session.beginTransaction();
+      List<ContactData> result = session.createQuery( "from ContactData where deprecated = '0000-00-00'" ).list();
+      session.getTransaction().commit();
+      session.close();
+      return new Contacts(result);
+   }}
