@@ -57,7 +57,7 @@ public class TestBase {
    }
 
    public void verifyGroupListInUI() {
-      if (Boolean.getBoolean("veriryUI")) {
+      if (Boolean.getBoolean("verifyUI")) {
          Groups dbGroups = app.db().groups();
          Groups uiGroups = app.group().all();
          assertThat(uiGroups, equalTo(dbGroups.stream()
@@ -67,7 +67,7 @@ public class TestBase {
    }
 
    public void verifyContactListInUI() {
-      if (!Boolean.getBoolean("veriryUI")) {
+      if (Boolean.getBoolean("verifyUI")) {
          Contacts dbContacts = app.db().contacts();
          Contacts uiContacts = app.contact().all();
          assertThat(uiContacts, equalTo(dbContacts.stream()

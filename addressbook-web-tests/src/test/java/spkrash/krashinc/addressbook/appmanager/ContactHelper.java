@@ -1,5 +1,6 @@
 package spkrash.krashinc.addressbook.appmanager;
 
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -35,12 +36,19 @@ public class ContactHelper extends HelperBase {
       fillTextField(By.name("email3"), contactData.getEmail3());
       fillTextField(By.name("phone2"), contactData.getHomePhone2());
       attach(By.name("photo"), contactData.getPhoto());
-
+//      if (contactData.getGroups().size() > 0) {
+//         new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroups().iterator().next().getName());
+//      }
    }
 
    public void returnToHomePage()
    {
       clickItem(By.linkText("home page"));
+   }
+
+   public void addToSelectedGroup()
+   {
+      clickItem(By.name("add"));
    }
 
    public void confirmContactCreation()
@@ -161,6 +169,10 @@ public class ContactHelper extends HelperBase {
    public String infoFromInfoPage() {
       String info = wd.findElement(By.id("content")).getText();
       return info;
+   }
+
+   public void selectGroupForAdd(String groupName) {
+      new Select(wd.findElement(By.name("to_group"))).selectByVisibleText(groupName);
    }
 }
 

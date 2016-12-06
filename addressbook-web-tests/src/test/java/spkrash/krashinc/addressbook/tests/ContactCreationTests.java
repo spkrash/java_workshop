@@ -7,6 +7,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import spkrash.krashinc.addressbook.model.ContactData;
 import spkrash.krashinc.addressbook.model.Contacts;
+import spkrash.krashinc.addressbook.model.Groups;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -57,8 +58,7 @@ public class ContactCreationTests extends TestBase {
    }
 
    @Test(dataProvider = "validContactsFromJson")
-   public void testContactCreation(ContactData contact)
-   {
+   public void testContactCreation(ContactData contact) {
       app.goTo().homePage();
       Contacts before = app.db().contacts();
       File photo = new File("src/test/resources/avatar.png");

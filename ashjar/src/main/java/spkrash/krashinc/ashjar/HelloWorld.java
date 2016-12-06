@@ -18,8 +18,6 @@ public class HelloWorld {
       System.out.println("Вторая точка имеет координаты (" + dist.x2 + ";" + dist.y2 + ").");
       System.out.println("Расстояние между точками равно " + dist.distance() + ".");
 
-      tezzt();
-
    }
 
    public static void hello(String target)
