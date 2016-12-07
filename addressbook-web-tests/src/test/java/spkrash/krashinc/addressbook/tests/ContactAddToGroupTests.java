@@ -16,9 +16,8 @@ public class ContactAddToGroupTests extends TestBase {
 
    @BeforeMethod
    public void ensurePreconditions() {
-
+      app.goTo().homePage();
       if (app.db().contacts().size() == 0) {
-         app.goTo().homePage();
          app.contact().create(new ContactData()
                .withFirstName("Bruce").withMiddleName("(B)").withLastName("Wayne").withNickname("Batman")
                .withAddress("Gotham City").withEmail("batman@gotham.com").withEmail2("batman2@gotham.com")
@@ -28,6 +27,7 @@ public class ContactAddToGroupTests extends TestBase {
       if (app.db().groups().size() == 0) {
          app.goTo().groupPage();
          app.group().create(new GroupData().withName("testGroup1").withHeader("headerGr1").withFooter("footerGr1"));
+         app.goTo().homePage();
       }
    }
 
@@ -38,7 +38,6 @@ public class ContactAddToGroupTests extends TestBase {
 
       for (ContactData contact : app.db().contacts()) {
          if (app.db().groups().size() != contact.getGroups().size()) {
-            app.goTo().homePage();
             app.contact().selectContactById(contact.getId());
             for (GroupData group : app.db().groups()) {
                if (!group.getContacts().contains(contact)) {
@@ -51,7 +50,6 @@ public class ContactAddToGroupTests extends TestBase {
             }
          }
       }
-      app.goTo().homePage();
       app.contact().create(new ContactData()
             .withFirstName("Bruce").withMiddleName("(B)").withLastName("Wayne").withNickname("Batman")
             .withAddress("Gotham City").withEmail("batman@gotham.com").withEmail2("batman2@gotham.com")

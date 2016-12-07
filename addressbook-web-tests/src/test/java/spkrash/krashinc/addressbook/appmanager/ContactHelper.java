@@ -174,5 +174,13 @@ public class ContactHelper extends HelperBase {
    public void selectGroupForAdd(int id) {
       new Select(wd.findElement(By.name("to_group"))).selectByValue(String.valueOf(id));
    }
+
+   public void selectGroupView(int id) {
+      new Select(wd.findElement(By.name("group"))).selectByValue(String.valueOf(id));
+   }
+
+   public void removeSelectedContactsFromGroup() {
+      clickItem(By.name("remove"));
+   }
 }
 
