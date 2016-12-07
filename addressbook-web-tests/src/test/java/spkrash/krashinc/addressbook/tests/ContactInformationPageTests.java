@@ -51,7 +51,7 @@ public class ContactInformationPageTests extends TestBase {
 
       result = result + contactInfoFromEditForm.getMiddleName();
 
-      if (!"".equals(result) && !"".equals(contactInfoFromEditForm.getLastName())){
+      if (!"".equals(result) && !"".equals(contactInfoFromEditForm.getLastName())) {
          result = result + " ";
       }
 

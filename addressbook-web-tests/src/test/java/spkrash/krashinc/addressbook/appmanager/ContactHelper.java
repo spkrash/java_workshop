@@ -1,9 +1,9 @@
 package spkrash.krashinc.addressbook.appmanager;
 
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import spkrash.krashinc.addressbook.model.ContactData;
 import spkrash.krashinc.addressbook.model.Contacts;
 
@@ -171,8 +171,8 @@ public class ContactHelper extends HelperBase {
       return info;
    }
 
-   public void selectGroupForAdd(String groupName) {
-      new Select(wd.findElement(By.name("to_group"))).selectByVisibleText(groupName);
+   public void selectGroupForAdd(int id) {
+      new Select(wd.findElement(By.name("to_group"))).selectByValue(String.valueOf(id));
    }
 }
 

@@ -7,7 +7,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.thoughtworks.xstream.XStream;
 import spkrash.krashinc.addressbook.model.ContactData;
-import spkrash.krashinc.addressbook.model.GroupData;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -45,9 +44,9 @@ public class ContactDataGenerator {
       List<ContactData> contacts = generateContacts(count);
       if (format.equals("csv")) {
          saveAsCsv(contacts, new File(file));
-      } else if (format.equals("xml")){
+      } else if (format.equals("xml")) {
          saveAsXml(contacts, new File(file));
-      } else if (format.equals("json")){
+      } else if (format.equals("json")) {
          saveAsJson(contacts, new File(file));
       } else {
          System.out.println("Unrecognized format" + format);
@@ -58,7 +57,7 @@ public class ContactDataGenerator {
       Gson gson = new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create();
       String json = gson.toJson(contacts);
       try (Writer writer = new FileWriter(file)) {
-      writer.write(json);
+         writer.write(json);
       }
    }
 

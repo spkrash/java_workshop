@@ -45,9 +45,9 @@ public class GroupDataGenerator {
       List<GroupData> groups = generateGroups(count);
       if (format.equals("csv")) {
          saveAsCsv(groups, new File(file));
-      } else if (format.equals("xml")){
+      } else if (format.equals("xml")) {
          saveAsXml(groups, new File(file));
-      } else if (format.equals("json")){
+      } else if (format.equals("json")) {
          saveAsJson(groups, new File(file));
       } else {
          System.out.println("Unrecognized format" + format);

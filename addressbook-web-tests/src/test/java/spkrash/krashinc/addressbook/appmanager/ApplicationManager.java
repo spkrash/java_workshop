@@ -1,6 +1,5 @@
 package spkrash.krashinc.addressbook.appmanager;
 
-import com.sun.javafx.binding.StringFormatter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -8,7 +7,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.BrowserType;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Objects;
@@ -76,7 +74,7 @@ public class ApplicationManager {
       return contactHelper;
    }
 
-   public DbHelper db(){
+   public DbHelper db() {
       return dbHelper;
    }
 }
