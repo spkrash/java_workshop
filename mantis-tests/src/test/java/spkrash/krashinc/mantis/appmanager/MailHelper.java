@@ -1,8 +1,8 @@
 package spkrash.krashinc.mantis.appmanager;
 
-import org.apache.tools.mail.MailMessage;
 import org.subethamail.wiser.Wiser;
 import org.subethamail.wiser.WiserMessage;
+import spkrash.krashinc.mantis.model.MailMessage;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;

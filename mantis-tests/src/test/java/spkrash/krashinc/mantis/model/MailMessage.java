@@ -5,8 +5,8 @@ package spkrash.krashinc.mantis.model;
  */
 public class MailMessage {
 
-   private final String text;
-   private final String to;
+   public String text;
+   public String to;
 
    public MailMessage(String to, String text){
       this.to = to;

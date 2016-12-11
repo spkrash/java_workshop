@@ -1,10 +1,10 @@
 package spkrash.krashinc.mantis.tests;
 
-import org.apache.tools.mail.MailMessage;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.lanwen.verbalregex.VerbalExpression;
+import spkrash.krashinc.mantis.model.MailMessage;
 
 import javax.mail.MessagingException;
 import java.io.IOException;
