@@ -43,6 +43,7 @@ public class MailHelper {
          return new MailMessage(mm.getAllRecipients()[0].toString(), (String) mm.getContent());
       } catch (MessagingException e) {
          e.printStackTrace();
+         return null;
       } catch (IOException e) {
          e.printStackTrace();
          return null;

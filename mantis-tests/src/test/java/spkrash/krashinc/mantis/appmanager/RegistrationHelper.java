@@ -25,5 +25,6 @@ public class RegistrationHelper extends HelperBase{
       wd.get(confirmationLink);
       fillTextField(By.name("password"), password);
       fillTextField(By.name("password_confirm"), password);
+      clickItem(By.xpath(".//*[@id='account-update-form']/fieldset/span/input")); //xpath по той же причине что и выше
    }
 }
