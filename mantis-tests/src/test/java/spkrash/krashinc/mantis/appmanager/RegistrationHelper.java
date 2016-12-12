@@ -27,4 +27,19 @@ public class RegistrationHelper extends HelperBase{
       fillTextField(By.name("password_confirm"), password);
       clickItem(By.xpath(".//*[@id='account-update-form']/fieldset/span/input")); //xpath по той же причине что и выше
    }
+
+
+   public void login(String username, String password) {
+      wd.get(app.getProperty("web.baseUrl") + "/login_page.php");
+      fillTextField(By.name("username"), username);
+      fillTextField(By.name("password"), password);
+      clickItem(By.xpath("//*[@id=\"login-form\"]/fieldset/span/input"));
+   }
+
+   public boolean areThereUsersExceptAdministrator() {
+      if (isElementPresent(By.xpath("//*[@id=\"manage-user-div\"]/table/tbody/tr[2]/td[1]"))){
+         return true;
+      }
+      return false;
+   }
 }
