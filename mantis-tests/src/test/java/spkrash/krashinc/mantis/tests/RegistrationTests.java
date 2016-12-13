@@ -1,8 +1,5 @@
 package spkrash.krashinc.mantis.tests;
 
-import org.openqa.selenium.By;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.lanwen.verbalregex.VerbalExpression;
 import spkrash.krashinc.mantis.model.MailMessage;
@@ -13,7 +10,6 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Objects;
 
 import static org.testng.Assert.assertTrue;
 
@@ -22,13 +18,9 @@ import static org.testng.Assert.assertTrue;
  */
 public class RegistrationTests extends TestBase {
 
-   @BeforeMethod
-   public void startMailServer() {
-      app.mail().start();
-   }
-
    @Test
    public void testRegistration() throws IOException, MessagingException {
+      app.mail().start();
       long now = System.currentTimeMillis();
       String user = String.format("user%s", now);
       String password = "password";
@@ -38,13 +30,15 @@ public class RegistrationTests extends TestBase {
       String confirmationLink = findConfirmationLink(mailMessages, email);
       app.registration().finish(confirmationLink, password);
       assertTrue(app.newSession().login(user, password));
+      app.mail().stop();
    }
 
    @Test
    public void testChangePassword() throws IOException, MessagingException {
 
-      HashSet<MantisUsers> mantisUsers = new HashSet<MantisUsers>();
-      Connection conn = null;
+      HashSet<MantisUsers> mantisUsers = new HashSet<>();
+      Connection conn;
+      String password = "changedPsswd";
 
       try {
          conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bugtracker?serverTimezone=UTC&user=root&password=");
@@ -52,21 +46,32 @@ public class RegistrationTests extends TestBase {
          Statement st = conn.createStatement();
          ResultSet rs = st.executeQuery("select id, username, email from mantis_user_table");
          while (rs.next()) {
-            if (! "administrator".equals(rs.getString("username"))){
+            if (!"administrator".equals(rs.getString("username"))) {
                mantisUsers.add(new MantisUsers(rs.getInt("id"), rs.getString("username"), rs.getString("email")));
             }
          }
-         if (mantisUsers.size() == 0){
+         if (mantisUsers.size() == 0) {
             testRegistration();
+            rs = st.executeQuery("select id, username, email from mantis_user_table");
+            while (rs.next()) {
+               if (!"administrator".equals(rs.getString("username"))) {
+                  mantisUsers.add(new MantisUsers(rs.getInt("id"), rs.getString("username"), rs.getString("email")));
+               }
+            }
          }
 
-
-//         app.registration().login("administrator", "root");
-//         app.goTo().settings();
-//         app.goTo().userSettings();
-
-
-
+         app.mail().start();
+         app.registration().login("administrator", "root");
+         app.goTo().settings();
+         app.goTo().userSettings();
+         MantisUsers changedUser = mantisUsers.iterator().next();
+         app.registration().resetPassword(changedUser.getUserName());
+         List<MailMessage> mailMessages = app.mail().waitForMail(1, 10000);
+         String confirmLink = findConfirmationLink(mailMessages, changedUser.getEmail());
+         app.registration().logout();
+         app.registration().finish(confirmLink, password);
+         assertTrue(app.newSession().login(changedUser.getUserName(), password));
+         app.mail().stop();
          rs.close();
          st.close();
          conn.close();
@@ -80,16 +85,9 @@ public class RegistrationTests extends TestBase {
    }
 
 
-
    private String findConfirmationLink(List<MailMessage> mailMessages, String email) {
       MailMessage mailMessage = mailMessages.stream().filter((m) -> m.to.equals(email)).findFirst().get();
       VerbalExpression regex = VerbalExpression.regex().find("http://").nonSpace().oneOrMore().build();
       return regex.getText(mailMessage.text);
-   }
-
-
-   @AfterMethod(alwaysRun = true)
-   public void stopMailServer(){
-      app.mail().stop();
    }
 }

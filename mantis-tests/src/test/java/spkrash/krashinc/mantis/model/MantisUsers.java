@@ -8,7 +8,7 @@ public class MantisUsers {
    public String userName;
    public String email;
 
-   public MantisUsers(int id, String userName, String email){
+   public MantisUsers(int id, String userName, String email) {
       this.id = id;
       this.userName = userName;
       this.email = email;

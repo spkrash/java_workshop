@@ -39,7 +39,7 @@ public class ApplicationManager {
 
    public void stop()
    {
-      if (wd != null){
+      if (wd != null) {
          wd.quit();
       }
    }
@@ -53,21 +53,21 @@ public class ApplicationManager {
    }
 
    public RegistrationHelper registration() {
-      if (registrationHelper == null){
+      if (registrationHelper == null) {
          registrationHelper = new RegistrationHelper(this);
       }
       return registrationHelper;
    }
 
-   public FtpHelper ftp(){
-      if (ftp == null){
+   public FtpHelper ftp() {
+      if (ftp == null) {
          ftp = new FtpHelper(this);
       }
       return ftp;
    }
 
    public WebDriver getDriver() {
-      if (wd == null){
+      if (wd == null) {
          if (Objects.equals(browser, BrowserType.FIREFOX)) {
             wd = new FirefoxDriver();
          } else if (Objects.equals(browser, BrowserType.CHROME)) {
@@ -83,14 +83,14 @@ public class ApplicationManager {
    }
 
    public MailHelper mail() {
-      if (mailHelper == null){
+      if (mailHelper == null) {
          mailHelper = new MailHelper(this);
       }
       return mailHelper;
    }
 
    public NavigationHelper goTo() {
-      if (navigationHelper == null){
+      if (navigationHelper == null) {
          navigationHelper = new NavigationHelper(this);
       }
       return navigationHelper;

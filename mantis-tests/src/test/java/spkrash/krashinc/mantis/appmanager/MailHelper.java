@@ -15,11 +15,24 @@ import java.util.stream.Collectors;
  */
 public class MailHelper {
    private ApplicationManager app;
-   private final Wiser wiser;
+   private Wiser wiser;
 
    public MailHelper(ApplicationManager app) {
       this.app = app;
       wiser = new Wiser();
+   }
+
+   public static MailMessage toModelMail(WiserMessage m) {
+      try {
+         MimeMessage mm = m.getMimeMessage();
+         return new MailMessage(mm.getAllRecipients()[0].toString(), (String) mm.getContent());
+      } catch (MessagingException e) {
+         e.printStackTrace();
+         return null;
+      } catch (IOException e) {
+         e.printStackTrace();
+         return null;
+      }
    }
 
    public List<MailMessage> waitForMail(int count, long timeout) throws MessagingException, IOException {
@@ -37,24 +50,12 @@ public class MailHelper {
       throw new Error("No mail :(");
    }
 
-   public static MailMessage toModelMail(WiserMessage m) {
-      try {
-         MimeMessage mm = m.getMimeMessage();
-         return new MailMessage(mm.getAllRecipients()[0].toString(), (String) mm.getContent());
-      } catch (MessagingException e) {
-         e.printStackTrace();
-         return null;
-      } catch (IOException e) {
-         e.printStackTrace();
-         return null;
-      }
-   }
-
-   public void start(){
+   public void start() {
+      wiser = new Wiser();
       wiser.start();
    }
 
-   public void stop(){
+   public void stop() {
       wiser.stop();
    }
 }

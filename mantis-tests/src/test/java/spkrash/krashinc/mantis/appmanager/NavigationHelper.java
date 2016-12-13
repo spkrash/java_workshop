@@ -12,14 +12,14 @@ public class NavigationHelper extends HelperBase {
    }
 
    public void settings() {
-      if (isElementPresent(By.id("manage-overview-table"))){
+      if (isElementPresent(By.id("manage-overview-table"))) {
          return;
       }
       clickItem(By.cssSelector("a[href$='manage_overview_page.php']"));
    }
 
    public void userSettings() {
-      if (isElementPresent(By.id("manage-user-div"))){
+      if (isElementPresent(By.id("manage-user-div"))) {
          return;
       }
       clickItem(By.cssSelector("a[href$='manage_user_page.php']"));
