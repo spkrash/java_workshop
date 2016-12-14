@@ -1,9 +1,12 @@
 package spkrash.krashinc.mantis.tests;
 
 import org.openqa.selenium.remote.BrowserType;
+import org.testng.SkipException;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import spkrash.krashinc.mantis.appmanager.ApplicationManager;
+import spkrash.krashinc.mantis.model.Issue;
 
 import java.io.File;
 import java.io.IOException;
@@ -27,5 +30,14 @@ public class TestBase {
    {
       app.ftp().restore("config_inc.php.bak", "config_inc.php");
       app.stop();
+   }
+   public boolean isIssueOpen(int issueId){
+      return true;
+   }
+
+   public void skipIfNotFixed(int issueId) {
+      if (isIssueOpen(issueId)) {
+         throw new SkipException(String.format("Ignored because of issue: %s", issueId));
+      }
    }
 }
