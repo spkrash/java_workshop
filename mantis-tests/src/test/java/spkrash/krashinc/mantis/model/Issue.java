@@ -55,4 +55,15 @@ public class Issue {
       this.project = project;
       return this;
    }
+
+   @Override
+   public String toString() {
+      return "Issue{" +
+            "id=" + id +
+            ", summary='" + summary + '\'' +
+            ", description='" + description + '\'' +
+            ", project=" + project +
+            ", status='" + status + '\'' +
+            '}';
+   }
 }
