@@ -76,40 +76,50 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ashjar/build.gradle">
+        <entry file="file://$PROJECT_DIR$/addressbook-web-tests/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="7" lean-forward="false" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+            <state relative-caret-position="154">
+              <caret line="20" column="15" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PointTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ashjar/src/test/java/spkrash/krashinc/ashjar/PointTests.java">
+      <file leaf-file-name="ApplicationManager.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/spkrash/krashinc/addressbook/appmanager/ApplicationManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="26" />
+            <state relative-caret-position="510">
+              <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EquationTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ashjar/src/test/java/spkrash/krashinc/ashjar/EquationTests.java">
+      <file leaf-file-name="local.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/resources/local.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="51">
+              <caret line="3" column="15" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PointTests2.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ashjar/src/test/java/spkrash/krashinc/ashjar/PointTests2.java">
+      <file leaf-file-name="remote.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/resources/remote.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="51">
+              <caret line="3" column="51" lean-forward="false" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testng-groups.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/resources/testng-groups.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1697,9 +1707,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/addressbook-web-tests/src/test/java/spkrash/krashinc/addressbook/tests/GroupModificationTests.java" />
-        <option value="$PROJECT_DIR$/addressbook-web-tests/build.gradle" />
-        <option value="$PROJECT_DIR$/addressbook-web-tests/src/test/java/spkrash/krashinc/addressbook/tests/GroupDeletionTests.java" />
         <option value="$PROJECT_DIR$/addressbook-web-tests/src/test/java/spkrash/krashinc/addressbook/tests/GroupCreationTests.java" />
         <option value="$PROJECT_DIR$/addressbook-web-tests/src/test/java/spkrash/krashinc/addressbook/tests/ContactModificationTests.java" />
         <option value="$PROJECT_DIR$/addressbook-web-tests/src/test/java/spkrash/krashinc/addressbook/tests/ContactDeletionTests.java" />
@@ -1748,6 +1755,9 @@
         <option value="$PROJECT_DIR$/ashjar/build.gradle" />
         <option value="$PROJECT_DIR$/ashjar/src/test/java/spkrash/krashinc/ashjar/PointTests.java" />
         <option value="$PROJECT_DIR$/ashjar/src/test/java/spkrash/krashinc/ashjar/PointTests2.java" />
+        <option value="$PROJECT_DIR$/addressbook-web-tests/src/test/resources/local.properties" />
+        <option value="$PROJECT_DIR$/addressbook-web-tests/src/test/resources/remote.properties" />
+        <option value="$PROJECT_DIR$/addressbook-web-tests/src/test/java/spkrash/krashinc/addressbook/appmanager/ApplicationManager.java" />
       </list>
     </option>
   </component>
@@ -1781,7 +1791,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ashjar" />
+              <option name="myItemId" value="addressbook-web-tests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1791,13 +1801,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ashjar" />
+              <option name="myItemId" value="addressbook-web-tests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1805,7 +1823,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ashjar" />
+              <option name="myItemId" value="addressbook-web-tests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -1821,7 +1839,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ashjar" />
+              <option name="myItemId" value="addressbook" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1831,7 +1849,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ashjar" />
+              <option name="myItemId" value="addressbook-web-tests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -1839,7 +1857,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -1847,7 +1865,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="addressbook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="appmanager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
               <option name="myItemId" value="ashjar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="addressbook-web-tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1869,8 +1905,11 @@
     <property name="full.screen.before.presentation.mode" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\WorkshopCode\java_workshop\ashjar\src" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="spkrash.krashinc.rest" />
+      <recent name="spkrash.krashinc.mantis.appmanager" />
+      <recent name="spkrash.krashinc.addressbook.appmanager" />
+      <recent name="spkrash.krashinc.addressbook" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="spkrash.krashinc.mantis" />
@@ -1878,6 +1917,7 @@
       <recent name="spkrash.krashinc.ashjar" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\WorkshopCode\java_workshop\addressbook-web-tests\src\test\resources" />
       <recent name="C:\WorkshopCode\java_workshop\mantis-tests\src\test\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -1885,11 +1925,8 @@
       <recent name="spkrash.krashinc.mantis.appmanager" />
       <recent name="spkrash.krashinc.mantis.tests" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="spkrash.krashinc.rest" />
-      <recent name="spkrash.krashinc.mantis.appmanager" />
-      <recent name="spkrash.krashinc.addressbook.appmanager" />
-      <recent name="spkrash.krashinc.addressbook" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\WorkshopCode\java_workshop\ashjar\src" />
     </key>
   </component>
   <component name="RunManager" selected="Groovy.build">
@@ -2428,20 +2465,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mantis-tests/src/test/java/spkrash/krashinc/mantis/appmanager/FtpHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="23" column="75" lean-forward="false" selection-start-line="23" selection-start-column="67" selection-end-line="23" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mantis-tests/src/test/java/spkrash/krashinc/mantis/appmanager/HttpSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="30" column="63" lean-forward="true" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/spkrash/krashinc/addressbook/appmanager/SessionHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -2575,24 +2598,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/resources/testng-groups.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/resources/testng-contacts.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/resources/local.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -2656,13 +2665,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="44" column="68" lean-forward="false" selection-start-line="44" selection-start-column="43" selection-end-line="44" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addressbook-web-tests/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -2802,6 +2804,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
           <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/resources/testng-groups.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addressbook-web-tests/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="20" column="15" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/resources/remote.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="51" lean-forward="false" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/resources/local.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="15" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/spkrash/krashinc/addressbook/appmanager/ApplicationManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding />
         </state>
       </provider>
