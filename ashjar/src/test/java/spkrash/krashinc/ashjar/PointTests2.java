@@ -23,7 +23,7 @@ public class PointTests2
    }
 
 
-   @Test
+   @Test (enabled = false)
    public void testDist2()
    {
       // несовпадение типов
@@ -32,7 +32,7 @@ public class PointTests2
       Assert.assertEquals(distance(p1, p2), 5);
    }
 
-   @Test
+   @Test (enabled = false)
    public void testDist3()
    {
       // ошибка в ожидаемом ррезультате
